@@ -29,25 +29,25 @@ const Home = (props) => {
             <Link
               to="/allMembers">
               All Members
-      </Link>
+            </Link>
           </li>
           <li>
             <Link
               to="/map2D">
               Map 2D
-      </Link>
+            </Link>
           </li>
           <li>
             <Link
               to="/map3D">
               Map 3D
-      </Link>
+            </Link>
           </li>
           <li>
             <Link
               to="/incident">
               Incident
-      </Link>
+            </Link>
           </li>
         </ul>
       </header>

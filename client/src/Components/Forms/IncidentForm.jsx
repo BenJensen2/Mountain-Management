@@ -9,28 +9,38 @@ const IncidentForm = () => {
 
   const collisionHandler = (e) => {
     console.log(e)
-    if(e.value == 'collision'){
+    console.log("Value: ", e.target.value)
+    if (e.target.value == 'collision') {
       setCollision(true)
       console.log("Collision Handler")
+      
     }
+    else {
+      setCollision(false)
+    }
+  }
+
+  const selectionHandler = (e) =>{
+    console.log("Selection Handler")
   }
   return (
     <div><h1>
       Incident Form
       </h1>
-      <form className="card-form" action="">
-        {/* Location */}
+
+      {/* Location */}
+      <form className="location-form" action="">
         {/* <Map2D /> */}
         <div className="location card">
           <div className="card-header">Location</div>
           <div className="card-body">
-            <label htmlFor="">Location</label>
-            <input type="text" />
           </div>
         </div>
-        <hr />
+      </form>
+
+      <div className="info-cards">
         {/* Incident */}
-        <div className="incident card">
+        <form className="incident-form card" action="">
           <div className="card-header">Incident</div>
           <div className="card-body">
             <label htmlFor="activity">Activity</label>
@@ -42,8 +52,8 @@ const IncidentForm = () => {
             </select>
             <label htmlFor="">Type of Incident</label>
             <select name="" id="" onClick={collisionHandler}>
-              <option value="">Solo Incident</option>
-              <option value="collision" >Collision</option>
+              <option value="" onClick={selectionHandler}>Solo Incident</option>
+              <option value="collision" onClick={selectionHandler} >Collision</option>
             </select>
             {collision &&
               <select name="" id="">
@@ -53,50 +63,9 @@ const IncidentForm = () => {
                 <option value="">Natural Feature</option>
               </select>
             }
-            <label htmlFor="collision">collision</label>
-            <input type="radio" />
-            {/* On Off Toggle */}
-            <div className="collision">
-              <ul>
-                <li>Guest 1 <GuestInfo /> </li>
-                <li>Guest 2 <GuestInfo /></li>
-              </ul>
-            </div>
           </div>
-        </div>
-        {/* Injuries */}
-        {/* Treatment */}
-        {/* Guest */}
-        <div className="guest card">
-          <div className="card-header">Guest</div>
-          <div className="card-body">
-
-            <label htmlFor="">First Name</label>
-            <input type="text" />
-
-            <label htmlFor="">Last Name</label>
-            <input type="text" />
-          </div>
-        </div>
-        <hr />
-
-        {/* Guest History */}
-        <div className="history card">
-          <label htmlFor="">Riding Level</label>
-          <input type="text" />
-        </div>
-        {/* Release */}
-        <div className="release card">
-          <label htmlFor="releasedto">Released To:</label>
-          <input type="text" />
-        </div>
-        {/* Conditions */}
-        <div className="conditions card">
-
-        </div>
-        {/* Patrollers */}
-        <div className="patrollers card"></div>
-      </form>
+        </form>
+      </div>
     </div>
   )
 }

@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'
 import '../styles/ContextMenu.css'
 
 const ContextMenu = ({ parentRef, mapRef }) => {
   const [isVisible, setVisibility] = useState(false);
-  const [parentx,setParentX] = useState(0);
-  const [parenty,setParentY] = useState(0);
+  const [parentx, setParentX] = useState(0);
+  const [parenty, setParentY] = useState(0);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
 
   useEffect(() => {
     const parent = parentRef.current
-    console.log("Parent",parent)
+    console.log("Parent", parent)
     console.log(parent.getBoundingClientRect())
     setParentX(parent.getBoundingClientRect().x)
     setParentY(parent.getBoundingClientRect().y)
@@ -48,10 +49,30 @@ const ContextMenu = ({ parentRef, mapRef }) => {
   return isVisible ? (
     <div className="context-menu" style={style}>
       <ul>
-        <li className = "context-item">Incident</li>
-        <li className = "context-item">Feature</li>
-        <li className = "context-item">Investigation</li>
-        <li className = "context-item">Safety</li>
+        <li className="context-item">
+          <Link
+            to="/incident">
+            Incident
+          </Link>
+        </li>
+        <li className="context-item">
+          <Link
+            to="/incident">
+            Feature
+          </Link>
+        </li>
+        <li className="context-item">
+          <Link
+            to="/incident">
+            Investigation
+          </Link>
+        </li>
+        <li className="context-item">
+          <Link
+            to="/incident">
+            Safety
+          </Link>
+        </li>
       </ul>
     </div>
   ) : null;
