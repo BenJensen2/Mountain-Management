@@ -12,3 +12,10 @@ mongoose
   );
 
 require("../models/Member");
+
+// Standalone database with Network updating & Connectivity.
+// Remote access portal
+// Single framed map with geolocation
+
+
+// Incident, Locations, SMI, Safety, Features, Buildings, Bumps, Lift Equipment, Lights, Power, Water, 

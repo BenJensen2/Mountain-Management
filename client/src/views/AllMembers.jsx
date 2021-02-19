@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import MemberForm from './MemberForm';
+import MemberForm from '../Components/Forms/MemberForm';
 
 const AllMembers = (props) => {
 
@@ -13,6 +14,7 @@ const AllMembers = (props) => {
   // Get all members as the page loads
   useEffect(() => {
     getMembers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // Sorts membersList Last_Name from a to z
@@ -24,28 +26,47 @@ const AllMembers = (props) => {
   const getMembers = () => {
     axios.get("http://localhost:8000/api/allMembers")
       .then(res => {
-        console.log("These are our members")
-        console.log(res.data)
+        // console.log("These are our members")
+        // console.log(res.data)
         setMembers(sorted(res.data))
         setLoaded(true)
-        console.log("Sorted Members", sorted(res.data))
+        // console.log("Sorted Members", sorted(res.data))
       })
       .catch(err => {
         console.log("We have an error", err)
         // console.log("This is the error", err.message)
-        if (err.message == "Network Error") {
+        if (err.message === "Network Error") {
           console.log("The database is probably not connected")
         }
       })
   }
 
   const createMemberHandler = () => {
-    console.log("Let's add someone!!");
+    // console.log("Let's add someone!!");
     setMemberFormDisplay(true);
   };
 
+  const deleteMember = (memberId) => {
+    console.log("Deleting Member")
+    axios.delete(`http://localhost:8000/api/member/delete/${memberId}`)
+      .then(res => {
+        console.log("Member Deleted")
+        setMembers(members.filter((member) => member._id !== memberId));
+      })
+      .catch(err => {
+        console.log("We have an error", err)
+        if (err.message === "Network Error") {
+          console.log("The database is probably not connected")
+        }
+      })
+  }
+
   return (
     <div>
+      <Link
+        to="/"
+      >Home
+      </Link>
       <h1>
         All Members
       </h1>
@@ -74,7 +95,7 @@ const AllMembers = (props) => {
                 <ul>
 
                   {member.Position.map((position) =>
-                    <li key = {position} >
+                    <li key={position} >
                       {position}
                     </li>
                   )}
@@ -83,13 +104,20 @@ const AllMembers = (props) => {
               {/* <td>{member.Position}</td> */}
               <td>
                 <button>
-                  <a>Edit</a>
+                  {/* <Link
+                    to={{
+                      pathname: `/member/${member._id}`,
+                      state: { memberId: `${member._id}` }
+                    }}>
+                    Edit
+                      </Link> */}
+                      Edit
                 </button>
               </td>
               <td>
-                <button>
-                  <a>Delete</a>
-                </button>
+                <button onClick={() => deleteMember(member._id)}>
+                  Delete
+                    </button>
               </td>
             </tr>
           )}

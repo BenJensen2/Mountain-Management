@@ -1,0 +1,10 @@
+.context-menu{
+  background-color: white;
+  border: solid 1px black;
+}
+
+.context-item{
+  border: black solid 1px;
+  margin: 0px;
+  padding: 2px;
+}

@@ -1,10 +1,32 @@
-import './App.css';
-import AllMembers from './views/AllMembers';
+import "./App.css";
+import AllMembers from "./views/AllMembers";
+import Home from "./views/Home";
+import Map2D from "./views/Map2D";
+import Map3D from "./views/Map3D";
+import Incident from "./views/Incident"
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <AllMembers/>
+      <Switch>
+        {/* Will select the first matching route */}
+        <Route path="/allMembers">
+          <AllMembers />
+        </Route>
+        <Route path="/incident">
+          <Incident />
+        </Route>
+        <Route path="/map3D">
+          <Map3D />
+        </Route>
+        <Route path="/map2D">
+          <Map2D />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
     </div>
   );
 }
