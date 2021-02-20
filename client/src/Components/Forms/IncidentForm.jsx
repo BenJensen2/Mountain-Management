@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './IncidentForm.css'
+import SelectButtons from '../SelectButtons'
 
 const IncidentForm = () => {
 
@@ -9,26 +10,20 @@ const IncidentForm = () => {
   const [collisionType, setCollisionType] = useState("")
 
   const buttonHandler = (e) => {
-    console.log(e.target.value, "Button", e.target, e.target.className)
-    let currentClass = e.target.className
-    console.log(typeof currentClass)
-    e.target.className += " button-selected";
-    // e.target.style = {
-    //   box-shadow: "2px 2px 8px #888888";
+    // console.log(e.target.style, e.target.boxShadow)
+    // let currentShadow = e.target.style.boxShadow;
+    // if (e.target.style.boxShadow == "rgb(201, 10, 17) 2px 2px 8px") {
+    //   console.log("Has box shadow")
+    //   e.target.style.boxShadow = ""
+    // } else {
+    //   console.log("Doesn't have shadow")
+    //   e.target.style.boxShadow = "rgb(201, 10, 17) 2px 2px 8px"
     // }
   }
 
-  const activityTypeHandler = (e) => {
-    buttonHandler(e)
-    console.log("Activity Type: ", e.target.value)
-    setActivityType(e.target.value)
-    // need single activity type validation
-  }
-
-
   const collisionHandler = (e) => {
     buttonHandler(e)
-    console.log("Type of Incident: ", e.target.value)
+    // console.log("Type of Incident: ", e.target.value)
     if (e.target.value === 'collision') {
       setCollision(true)
     }
@@ -40,7 +35,7 @@ const IncidentForm = () => {
 
   const collisionTypeHandler = (e) => {
     buttonHandler(e)
-    console.log("Collision Type: ", e.target.value)
+    // console.log("Collision Type: ", e.target.value)
     setCollisionType(e.target.value)
   }
 
@@ -78,23 +73,29 @@ const IncidentForm = () => {
           <div className="card-body">
             <label htmlFor="activity">Activity</label>
             <div className="activity-types">
-              <button type="button" className="activity-type selector-button" onClick={activityTypeHandler} value="skiing">Skiing</button>
-              <button type="button" className="activity-type selector-button" onClick={activityTypeHandler} value="boarding">Boarding</button>
-              <button type="button" className="activity-type selector-button" onClick={activityTypeHandler} value="snowSkating">Snow Skating</button>
-              <button type="button" className="activity-type selector-button" onClick={activityTypeHandler} value="tubing">Tubing</button>
+              <SelectButtons
+                buttons={[
+                  ["Skiing", "skiing"],
+                  ["Boarding", "boarding"],
+                  ["Snow Skating", "snowSkating"],
+                  ["Tubing", "tubing"]
+                ]}
+                setValue={setActivityType}
+                shadowColor={"rgb(201, 10, 17)"}
+              />
             </div>
             <label htmlFor="">Type of Incident</label>
             <div className="collision-types">
-              <button type="button" className="selector-button" onClick={collisionHandler} value="solo" >Solo</button>
-              <button type="button" className="selector-button" onClick={collisionHandler} value="collision" >Collision</button>
+              <button type="button" className="selector-button unselected" onClick={collisionHandler} value="solo" >Solo</button>
+              <button type="button" className="selector-button unselected" onClick={collisionHandler} value="collision" >Collision</button>
             </div>
             {collision && <label htmlFor="">Collision with :</label>}
             {collision &&
               <div className="collision-types">
-                <button type="button" className="selector-button" onClick={collisionTypeHandler} value="guest" >Guest</button>
-                <button type="button" className="selector-button" onClick={collisionTypeHandler} value="staff" >Staff</button>
-                <button type="button" className="selector-button" onClick={collisionTypeHandler} value="manMade" >Man Made Feature</button>
-                <button type="button" className="selector-button" onClick={collisionTypeHandler} value="natural" >Solo</button>
+                <button type="button" className="selector-button unselected" onClick={collisionTypeHandler} value="guest" >Guest</button>
+                <button type="button" className="selector-button unselected" onClick={collisionTypeHandler} value="staff" >Staff</button>
+                <button type="button" className="selector-button unselected" onClick={collisionTypeHandler} value="manMade" >Man Made Feature</button>
+                <button type="button" className="selector-button unselected" onClick={collisionTypeHandler} value="natural" >Solo</button>
               </div>
             }
           </div>
