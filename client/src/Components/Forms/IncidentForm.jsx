@@ -6,6 +6,8 @@ import GuestInfo from './GuestInfo'
 const IncidentForm = () => {
 
   const [collision, setCollision] = useState(false)
+  const [incidentType, setIncidentType] = useState("solo")
+  const [collisionType, setCollisionType] = useState("guest")
 
   const collisionHandler = (e) => {
     console.log(e)
@@ -13,16 +15,17 @@ const IncidentForm = () => {
     if (e.target.value == 'collision') {
       setCollision(true)
       console.log("Collision Handler")
-      
     }
     else {
       setCollision(false)
     }
+    setIncidentType(e.target.value)
   }
 
-  const selectionHandler = (e) =>{
-    console.log("Selection Handler")
+  const collisionTypeHandler = (e) => {
+    setCollisionType(e.target.value)
   }
+  
   return (
     <div><h1>
       Incident Form
@@ -51,16 +54,16 @@ const IncidentForm = () => {
               <option value="">Tubing</option>
             </select>
             <label htmlFor="">Type of Incident</label>
-            <select name="" id="" onClick={collisionHandler}>
-              <option value="" onClick={selectionHandler}>Solo Incident</option>
-              <option value="collision" onClick={selectionHandler} >Collision</option>
+            <select name="" id="" value={incidentType} onChange={collisionHandler}>
+              <option value="solo">Solo Incident</option>
+              <option value="collision">Collision</option>
             </select>
             {collision &&
-              <select name="" id="">
-                <option value="">Guest</option>
-                <option value="">Staff</option>
-                <option value="">Man Made Feature</option>
-                <option value="">Natural Feature</option>
+              <select name="" id="" value={collisionType} onChange={collisionTypeHandler}>
+                <option value="guest">Guest</option>
+                <option value="staff">Staff</option>
+                <option value="manMade">Man Made Feature</option>
+                <option value="natural">Natural Feature</option>
               </select>
             }
           </div>
