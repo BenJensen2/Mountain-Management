@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import '../styles/Map.css'
 import {
-  exhibition, exhibition_poly,
+  exhibition,
   the_wedge
 } from '../data/Runs'
 
@@ -10,7 +10,7 @@ import { runs } from '../data/Runs'
 
 // import {char_1} from '../data/Lifts'
 
-const Map = (props) => {
+const Map = () => {
 
   var show_map = true
   var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');

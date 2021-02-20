@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-import axios from 'axios';
+import React, { useRef } from 'react';
 import { Link } from "react-router-dom";
 import Bear from '../images/Bear.jpg';
 import '../styles/Home.css'
@@ -9,14 +8,6 @@ const Home = (props) => {
 
   const containerRef = useRef(null);
   const mapRef = useRef(null)
-
-  // useEffect(() => {
-  //   document.onContextMenu = e.preventDefault()
-  // })
-
-  const bearHandler = (e) => {
-    console.log("Bear Peak!")
-  }
 
   return (
     <div>

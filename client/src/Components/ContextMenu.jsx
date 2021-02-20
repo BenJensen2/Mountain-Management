@@ -4,8 +4,6 @@ import '../styles/ContextMenu.css'
 
 const ContextMenu = ({ parentRef, mapRef }) => {
   const [isVisible, setVisibility] = useState(false);
-  const [parentx, setParentX] = useState(0);
-  const [parenty, setParentY] = useState(0);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
 
@@ -13,8 +11,6 @@ const ContextMenu = ({ parentRef, mapRef }) => {
     const parent = parentRef.current
     console.log("Parent", parent)
     console.log(parent.getBoundingClientRect())
-    setParentX(parent.getBoundingClientRect().x)
-    setParentY(parent.getBoundingClientRect().y)
 
     if (!parent) {
       return;

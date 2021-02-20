@@ -1,4 +1,4 @@
-const run_names = ["Exhibition", "The Wedge"];
+// const run_names = ["Exhibition", "The Wedge"];
 
 const exhibition = {
   type: "geojson",

@@ -108,7 +108,7 @@ const MemberForm = (props) => {
 
   return (
     <div>
-      <form onSubmit={formHandler}>
+      <form className="member-form" onSubmit={formHandler}>
         <ul>
           <li>
             <label>

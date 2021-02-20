@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import '../styles/Map.css'
 
-const Map = (props) => {
+const Map = () => {
 
 
   var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
