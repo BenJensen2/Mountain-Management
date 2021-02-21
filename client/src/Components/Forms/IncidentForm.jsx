@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './IncidentForm.css'
 import SingleSelectButtons from '../SingleSelectButtons'
 import MultipleSelectButtons from '../MultipleSelectButtons'
@@ -8,6 +8,7 @@ const IncidentForm = () => {
   const [activityType, setActivityType] = useState("")
   const [incidentType, setIncidentType] = useState("")
   const [collisionTypes, setCollisionTypes] = useState([])
+  const [showFeatures, setShowFeatures] = useState(false)
   let shadowColor = "rgb(201, 10, 17)";
 
   // Form Handlers
@@ -21,9 +22,16 @@ const IncidentForm = () => {
     console.log("Incident Form Data: ", incidentFormData)
   }
 
+  useEffect(() =>{
+    if (collisionTypes.includes("manMade") || collisionTypes.includes("natural")){
+      setShowFeatures(true)
+    }
+  })
+
   return (
-    <div className="incident-form-component" ><h1>
-      Incident Form
+    <div className="incident-form-component">
+      <h1>
+        Incident Form
       </h1>
 
       {/* Location */}
@@ -38,11 +46,12 @@ const IncidentForm = () => {
 
       <div className="info-cards">
         {/* Incident */}
-        <form className="incident-form card" action="" onSubmit={incidentFormHandler}>
+        {/* <form className="incident-form card" action="" onSubmit={incidentFormHandler}> */}
+        <div className="card">
           <div className="card-header">Incident</div>
           <div className="card-body">
             <label htmlFor="activity">Activity</label>
-            <div className="activity-types">
+            <div className="activity-type">
               <SingleSelectButtons
                 buttons={[
                   ["Skiing", "skiing"],
@@ -50,19 +59,19 @@ const IncidentForm = () => {
                   ["Snow Skating", "snowSkating"],
                   ["Tubing", "tubing"]
                 ]}
-                currentValue={activityType}
+                value={activityType}
                 setValue={setActivityType}
                 shadowColor={shadowColor}
               />
             </div>
             <label htmlFor="">Type of Incident</label>
-            <div className="collision-types">
+            <div className="incident-type">
               <SingleSelectButtons
                 buttons={[
                   ["Solo", "solo"],
                   ["Collision", "collision"]
                 ]}
-                currentValue={incidentType}
+                value={incidentType}
                 setValue={setIncidentType}
                 shadowColor={shadowColor}
               />
@@ -77,14 +86,71 @@ const IncidentForm = () => {
                     ["Man Made Feature", "manMade"],
                     ["Natural Feature", "natural"]
                   ]}
-                  values={collisionTypes}
-                  setValues={setCollisionTypes}
+                  buttonValues={collisionTypes}
+                  setButtonValues={setCollisionTypes}
                   shadowColor={shadowColor}
                 />
               </div>
             }
           </div>
-        </form>
+        </div>
+        <div className="card">
+          <div className="card-header">Personnel</div>
+          <div className="card-body">
+        <div>Guest Info</div>
+        {collisionTypes.includes("guest") &&
+          <div>Second Party</div>
+        }
+        {collisionTypes.includes("staff") &&
+          <div>Staff Member</div>
+        }
+        <div>Patroller Info</div>
+          </div>
+        </div>
+        {showFeatures &&
+          <div className="card">
+            <div className="card-header">Features</div>
+            <div className="card-body">
+              {collisionTypes.includes("manMade") &&
+              <div>Man Made Feature</div>
+              }
+              {collisionTypes.includes("natural") &&
+              <div>Natural Feature</div>
+              }
+            </div>
+          </div>
+        }
+        <div className="card">
+          <div className="card-header">Gear</div>
+          <div className="card-body">
+        {activityType == "skiing" &&
+          <ul>
+            <li>Skis</li>
+            <li>Boots</li>
+            <li>Bindings</li>
+          </ul>
+        }
+        {activityType == "boarding" &&
+          <ul>
+            <li>Board</li>
+            <li>Boots</li>
+            <li>Bindings</li>
+          </ul>
+        }
+        {activityType == "snowSkating" &&
+          <ul>
+            <li>Board</li>
+            <li>Leash?</li>
+          </ul>
+        }
+        {activityType == "tubing" &&
+          <ul>
+            <li>Tube Hill</li>
+            <li>Guardian</li>
+          </ul>
+        }
+          </div>
+        </div>
       </div>
     </div>
   )

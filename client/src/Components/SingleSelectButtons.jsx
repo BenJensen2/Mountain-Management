@@ -1,7 +1,7 @@
 import React from 'react';
 import './SelectButtons.css'
 
-const SingleSelectButtons = ({ buttons, currentValue, setValue, shadowColor }) => {
+const SingleSelectButtons = ({ buttons, value, setValue, shadowColor }) => {
   const clearButtons = (e) => {
     let childNodes = e.target.parentElement.children;
     for (let i = 0; i < childNodes.length; i++) {
@@ -17,7 +17,7 @@ const SingleSelectButtons = ({ buttons, currentValue, setValue, shadowColor }) =
 
   const buttonHandler = (e) => {
     clearButtons(e)
-    if (currentValue !== e.target.value){
+    if (value !== e.target.value){
       setValue(e.target.value)
       shadowButton(e)
     } else {

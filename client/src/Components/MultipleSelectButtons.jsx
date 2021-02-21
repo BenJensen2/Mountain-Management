@@ -1,7 +1,18 @@
 import React from 'react';
 import './SelectButtons.css'
 
-const MultipleSelectButtons = ({ buttons, values, setValues, shadowColor }) => {
+const MultipleSelectButtons = ({ buttons, buttonValues, setButtonValues, shadowColor }) => {
+
+  const updateValue = (e) => {
+    let newValues = [...buttonValues];
+    if (newValues.includes(e.target.value)) {
+      let filteredValues = newValues.filter(newValue => newValue !== e.target.value)
+      setButtonValues(filteredValues)
+    } else {
+      console.log("New Values: ", [...buttonValues, e.target.value])
+      setButtonValues([...buttonValues, e.target.value])
+    }
+  }
 
   const shadowToggle = (e) => {
     let shadowStyle = " 2px 2px 8px";
@@ -11,11 +22,7 @@ const MultipleSelectButtons = ({ buttons, values, setValues, shadowColor }) => {
   }
 
   const buttonHandler = (e) => {
-    if (values.includes(e.target.value)) {
-      setValues(values.filter(value => value !== e.target.value))
-    } else {
-      values.push(e.target.value)
-    }
+    updateValue(e)
     shadowToggle(e)
   }
 
