@@ -59,13 +59,11 @@ const Map = () => {
         ]
       });
 
-      var marker = new mapboxgl.Marker()
+      new mapboxgl.Marker()
         .setLngLat([
           -116.86040550470352,
           34.21151158708819
-        ])
-
-        .addTo(map);
+        ]).addTo(map);
 
       // Load an image from an external URL.
       map.loadImage('http://placekitten.com/50/50', function (error, image) {

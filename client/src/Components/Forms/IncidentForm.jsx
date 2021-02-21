@@ -1,43 +1,14 @@
 import React, { useState } from 'react';
 import './IncidentForm.css'
-import SelectButtons from '../SelectButtons'
+import SingleSelectButtons from '../SingleSelectButtons'
+import MultipleSelectButtons from '../MultipleSelectButtons'
 
 const IncidentForm = () => {
 
   const [activityType, setActivityType] = useState("")
   const [incidentType, setIncidentType] = useState("")
-  const [collision, setCollision] = useState(false)
-  const [collisionType, setCollisionType] = useState("")
-
-  const buttonHandler = (e) => {
-    // console.log(e.target.style, e.target.boxShadow)
-    // let currentShadow = e.target.style.boxShadow;
-    // if (e.target.style.boxShadow == "rgb(201, 10, 17) 2px 2px 8px") {
-    //   console.log("Has box shadow")
-    //   e.target.style.boxShadow = ""
-    // } else {
-    //   console.log("Doesn't have shadow")
-    //   e.target.style.boxShadow = "rgb(201, 10, 17) 2px 2px 8px"
-    // }
-  }
-
-  const collisionHandler = (e) => {
-    buttonHandler(e)
-    // console.log("Type of Incident: ", e.target.value)
-    if (e.target.value === 'collision') {
-      setCollision(true)
-    }
-    else {
-      setCollision(false)
-    }
-    setIncidentType(e.target.value)
-  }
-
-  const collisionTypeHandler = (e) => {
-    buttonHandler(e)
-    // console.log("Collision Type: ", e.target.value)
-    setCollisionType(e.target.value)
-  }
+  const [collisionTypes, setCollisionTypes] = useState([])
+  let shadowColor = "rgb(201, 10, 17)";
 
   // Form Handlers
   const incidentFormHandler = (e) => {
@@ -45,8 +16,7 @@ const IncidentForm = () => {
     let incidentFormData = {
       "activityType": activityType,
       "incidentType": incidentType,
-      "collision": collision,
-      "collisionType": collisionType
+      "collisionTypes": collisionTypes
     }
     console.log("Incident Form Data: ", incidentFormData)
   }
@@ -73,29 +43,44 @@ const IncidentForm = () => {
           <div className="card-body">
             <label htmlFor="activity">Activity</label>
             <div className="activity-types">
-              <SelectButtons
+              <SingleSelectButtons
                 buttons={[
                   ["Skiing", "skiing"],
                   ["Boarding", "boarding"],
                   ["Snow Skating", "snowSkating"],
                   ["Tubing", "tubing"]
                 ]}
+                currentValue={activityType}
                 setValue={setActivityType}
-                shadowColor={"rgb(201, 10, 17)"}
+                shadowColor={shadowColor}
               />
             </div>
             <label htmlFor="">Type of Incident</label>
             <div className="collision-types">
-              <button type="button" className="selector-button unselected" onClick={collisionHandler} value="solo" >Solo</button>
-              <button type="button" className="selector-button unselected" onClick={collisionHandler} value="collision" >Collision</button>
+              <SingleSelectButtons
+                buttons={[
+                  ["Solo", "solo"],
+                  ["Collision", "collision"]
+                ]}
+                currentValue={incidentType}
+                setValue={setIncidentType}
+                shadowColor={shadowColor}
+              />
             </div>
-            {collision && <label htmlFor="">Collision with :</label>}
-            {collision &&
+            {incidentType === "collision" && <label htmlFor="">Collision with :</label>}
+            {incidentType === "collision" &&
               <div className="collision-types">
-                <button type="button" className="selector-button unselected" onClick={collisionTypeHandler} value="guest" >Guest</button>
-                <button type="button" className="selector-button unselected" onClick={collisionTypeHandler} value="staff" >Staff</button>
-                <button type="button" className="selector-button unselected" onClick={collisionTypeHandler} value="manMade" >Man Made Feature</button>
-                <button type="button" className="selector-button unselected" onClick={collisionTypeHandler} value="natural" >Solo</button>
+                <MultipleSelectButtons
+                  buttons={[
+                    ["Guest", "guest"],
+                    ["Staff", "staff"],
+                    ["Man Made Feature", "manMade"],
+                    ["Natural Feature", "natural"]
+                  ]}
+                  values={collisionTypes}
+                  setValues={setCollisionTypes}
+                  shadowColor={shadowColor}
+                />
               </div>
             }
           </div>
