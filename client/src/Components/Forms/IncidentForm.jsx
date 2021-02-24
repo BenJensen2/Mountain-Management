@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './IncidentForm.css'
 import SingleSelectButtons from '../SingleSelectButtons'
 import MultipleSelectButtons from '../MultipleSelectButtons'
+import GuestInfo from './GuestInfo'
 
 const IncidentForm = () => {
 
@@ -22,8 +23,8 @@ const IncidentForm = () => {
     console.log("Incident Form Data: ", incidentFormData)
   }
 
-  useEffect(() =>{
-    if (collisionTypes.includes("manMade") || collisionTypes.includes("natural")){
+  useEffect(() => {
+    if (collisionTypes.includes("manMade") || collisionTypes.includes("natural")) {
       setShowFeatures(true)
     }
   })
@@ -97,14 +98,14 @@ const IncidentForm = () => {
         <div className="card">
           <div className="card-header">Personnel</div>
           <div className="card-body">
-        <div>Guest Info</div>
-        {collisionTypes.includes("guest") &&
-          <div>Second Party</div>
-        }
-        {collisionTypes.includes("staff") &&
-          <div>Staff Member</div>
-        }
-        <div>Patroller Info</div>
+            <GuestInfo />
+            {collisionTypes.includes("guest") &&
+              <div>Second Party</div>
+            }
+            {collisionTypes.includes("staff") &&
+              <div>Staff Member</div>
+            }
+            <div>Patroller Info</div>
           </div>
         </div>
         {showFeatures &&
@@ -112,10 +113,10 @@ const IncidentForm = () => {
             <div className="card-header">Features</div>
             <div className="card-body">
               {collisionTypes.includes("manMade") &&
-              <div>Man Made Feature</div>
+                <div>Man Made Feature</div>
               }
               {collisionTypes.includes("natural") &&
-              <div>Natural Feature</div>
+                <div>Natural Feature</div>
               }
             </div>
           </div>
@@ -123,32 +124,32 @@ const IncidentForm = () => {
         <div className="card">
           <div className="card-header">Gear</div>
           <div className="card-body">
-        {activityType == "skiing" &&
-          <ul>
-            <li>Skis</li>
-            <li>Boots</li>
-            <li>Bindings</li>
-          </ul>
-        }
-        {activityType == "boarding" &&
-          <ul>
-            <li>Board</li>
-            <li>Boots</li>
-            <li>Bindings</li>
-          </ul>
-        }
-        {activityType == "snowSkating" &&
-          <ul>
-            <li>Board</li>
-            <li>Leash?</li>
-          </ul>
-        }
-        {activityType == "tubing" &&
-          <ul>
-            <li>Tube Hill</li>
-            <li>Guardian</li>
-          </ul>
-        }
+            {activityType === "skiing" &&
+              <ul>
+                <li>Skis</li>
+                <li>Boots</li>
+                <li>Bindings</li>
+              </ul>
+            }
+            {activityType === "boarding" &&
+              <ul>
+                <li>Board</li>
+                <li>Boots</li>
+                <li>Bindings</li>
+              </ul>
+            }
+            {activityType === "snowSkating" &&
+              <ul>
+                <li>Board</li>
+                <li>Leash?</li>
+              </ul>
+            }
+            {activityType === "tubing" &&
+              <ul>
+                <li>Tube Hill</li>
+                <li>Guardian</li>
+              </ul>
+            }
           </div>
         </div>
       </div>

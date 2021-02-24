@@ -1,0 +1,85 @@
+.guest-info {
+  margin: auto;
+  /* text-align: left; */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.guest-info-header {
+  text-align: center;
+  margin: 15px 0px 20px 0px;
+}
+
+.top-item {
+  width: 200px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.top-item label {
+  margin-bottom: 5px;
+}
+
+.guest-inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column-1 {
+  width: 120px;
+  display: inline-block;
+}
+
+.column-2 {
+  width: 180px;
+  display: inline-block;
+}
+
+.form-item {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.form-item label {
+  width: 100%;
+}
+
+.form-item input {
+  height: 20px;
+  width: 90%;
+  margin-top: 5px;
+  border: solid gray 1px;
+  border-radius: 5px;
+}
+
+
+/* Unique Fields */
+
+.city-state{
+  display: flex;
+  justify-content: space-between;
+}
+
+#guest-city{
+  width: 130px;
+}
+
+#guest-state{
+  width: 45px;
+  margin-right: 12px;
+}
+
+.country-zip{
+  display: flex;
+  justify-content: space-between;
+}
+
+#guest-country{
+  width: 90px;
+}
+
+#guest-zip{
+  width: 70px;
+  margin-right: 12px;
+}

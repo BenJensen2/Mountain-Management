@@ -12,7 +12,7 @@ const Home = (props) => {
   return (
     <div>
       <header>
-        <h1>
+        <h1 className="home-header" >
           HomePage
       </h1>
         <ul>
