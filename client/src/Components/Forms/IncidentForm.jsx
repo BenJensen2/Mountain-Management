@@ -31,6 +31,15 @@ const IncidentForm = () => {
     }else{setShowFeatures(false)}
   })
 
+  const collapseBodyHandler = (e) => {
+    let currentDisplay = window.getComputedStyle(e.target.nextSibling).getPropertyValue('display')
+    if (currentDisplay === "none") {
+      e.target.nextSibling.style.display = "block";
+    } else {
+      e.target.nextSibling.style.display = "none";
+    }
+  }
+
   return (
     <div className="incident-form-component">
       <h1>
@@ -51,7 +60,7 @@ const IncidentForm = () => {
         {/* Incident */}
         {/* <form className="incident-form card" action="" onSubmit={incidentFormHandler}> */}
         <div className="card">
-          <div className="card-header">Incident</div>
+          <div className="card-header" onClick={collapseBodyHandler} >Incident</div>
           <div className="card-body">
             <label htmlFor="activity">Activity</label>
             <div className="activity-type">
@@ -98,7 +107,7 @@ const IncidentForm = () => {
           </div>
         </div>
         <div className="card">
-          <div className="card-header">Personnel</div>
+          <div className="card-header" onClick={collapseBodyHandler}>Personnel</div>
           <div className="card-body">
             
             <ContactForm 
@@ -120,7 +129,7 @@ const IncidentForm = () => {
         </div>
         {showFeatures &&
           <div className="card">
-            <div className="card-header">Features</div>
+            <div className="card-header" onClick={collapseBodyHandler}>Features</div>
             <div className="card-body">
               {collisionTypes.includes("manMade") &&
                 <div>Man Made Feature</div>
@@ -132,7 +141,7 @@ const IncidentForm = () => {
           </div>
         }
         <div className="card">
-          <div className="card-header">Gear</div>
+          <div className="card-header" onClick={collapseBodyHandler}>Gear</div>
           <div className="card-body">
             {activityType === "skiing" &&
               <ul>
