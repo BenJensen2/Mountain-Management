@@ -1,0 +1,9 @@
+#responderType, #responderName{
+  margin-top: 5px;
+}
+
+#responderComments{
+  height: 200px;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}

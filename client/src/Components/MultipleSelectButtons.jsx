@@ -9,7 +9,6 @@ const MultipleSelectButtons = ({ buttons, buttonValues, setButtonValues, shadowC
       let filteredValues = newValues.filter(newValue => newValue !== e.target.value)
       setButtonValues(filteredValues)
     } else {
-      console.log("New Values: ", [...buttonValues, e.target.value])
       setButtonValues([...buttonValues, e.target.value])
     }
   }

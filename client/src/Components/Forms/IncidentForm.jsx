@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './IncidentForm.css'
 import SingleSelectButtons from '../SingleSelectButtons'
 import MultipleSelectButtons from '../MultipleSelectButtons'
-import GuestInfo from './GuestInfo'
+import ContactForm from './ContactForm'
+import ResponderForm from './ResponderForm'
+import StaffForm from './StaffForm'
 
 const IncidentForm = () => {
 
@@ -13,20 +15,20 @@ const IncidentForm = () => {
   let shadowColor = "rgb(201, 10, 17)";
 
   // Form Handlers
-  const incidentFormHandler = (e) => {
-    e.preventDefault()
-    let incidentFormData = {
-      "activityType": activityType,
-      "incidentType": incidentType,
-      "collisionTypes": collisionTypes
-    }
-    console.log("Incident Form Data: ", incidentFormData)
-  }
+  // const incidentFormHandler = (e) => {
+  //   e.preventDefault()
+  //   let incidentFormData = {
+  //     "activityType": activityType,
+  //     "incidentType": incidentType,
+  //     "collisionTypes": collisionTypes
+  //   }
+  //   console.log("Incident Form Data: ", incidentFormData)
+  // }
 
   useEffect(() => {
     if (collisionTypes.includes("manMade") || collisionTypes.includes("natural")) {
       setShowFeatures(true)
-    }
+    }else{setShowFeatures(false)}
   })
 
   return (
@@ -98,14 +100,22 @@ const IncidentForm = () => {
         <div className="card">
           <div className="card-header">Personnel</div>
           <div className="card-body">
-            <GuestInfo />
+            
+            <ContactForm 
+              title = "Guest Info"
+              contactType = "guest"
+            />
+            
             {collisionTypes.includes("guest") &&
-              <div>Second Party</div>
+              <ContactForm 
+              title = "Second Party"
+              contactType = "guest"
+            />
             }
             {collisionTypes.includes("staff") &&
-              <div>Staff Member</div>
+              <StaffForm/>
             }
-            <div>Patroller Info</div>
+            <ResponderForm/>
           </div>
         </div>
         {showFeatures &&
