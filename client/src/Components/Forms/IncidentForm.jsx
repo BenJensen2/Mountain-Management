@@ -14,21 +14,10 @@ const IncidentForm = () => {
   const [showFeatures, setShowFeatures] = useState(false)
   let shadowColor = "rgb(201, 10, 17)";
 
-  // Form Handlers
-  // const incidentFormHandler = (e) => {
-  //   e.preventDefault()
-  //   let incidentFormData = {
-  //     "activityType": activityType,
-  //     "incidentType": incidentType,
-  //     "collisionTypes": collisionTypes
-  //   }
-  //   console.log("Incident Form Data: ", incidentFormData)
-  // }
-
   useEffect(() => {
     if (collisionTypes.includes("manMade") || collisionTypes.includes("natural")) {
       setShowFeatures(true)
-    }else{setShowFeatures(false)}
+    } else { setShowFeatures(false) }
   })
 
   const collapseBodyHandler = (e) => {
@@ -109,37 +98,24 @@ const IncidentForm = () => {
         <div className="card">
           <div className="card-header" onClick={collapseBodyHandler}>Personnel</div>
           <div className="card-body">
-            
-            <ContactForm 
-              title = "Guest Info"
-              contactType = "guest"
+
+            <ContactForm
+              title="Guest Info"
+              contactType="guest"
             />
-            
+
             {collisionTypes.includes("guest") &&
-              <ContactForm 
-              title = "Second Party"
-              contactType = "guest"
-            />
+              <ContactForm
+                title="Second Party"
+                contactType="guest"
+              />
             }
             {collisionTypes.includes("staff") &&
-              <StaffForm/>
+              <StaffForm />
             }
-            <ResponderForm/>
+            <ResponderForm />
           </div>
         </div>
-        {showFeatures &&
-          <div className="card">
-            <div className="card-header" onClick={collapseBodyHandler}>Features</div>
-            <div className="card-body">
-              {collisionTypes.includes("manMade") &&
-                <div>Man Made Feature</div>
-              }
-              {collisionTypes.includes("natural") &&
-                <div>Natural Feature</div>
-              }
-            </div>
-          </div>
-        }
         <div className="card">
           <div className="card-header" onClick={collapseBodyHandler}>Gear</div>
           <div className="card-body">
@@ -171,6 +147,19 @@ const IncidentForm = () => {
             }
           </div>
         </div>
+        {showFeatures &&
+          <div className="card">
+            <div className="card-header" onClick={collapseBodyHandler}>Features</div>
+            <div className="card-body">
+              {collisionTypes.includes("manMade") &&
+                <div>Man Made Feature</div>
+              }
+              {collisionTypes.includes("natural") &&
+                <div>Natural Feature</div>
+              }
+            </div>
+          </div>
+        }
       </div>
     </div>
   )

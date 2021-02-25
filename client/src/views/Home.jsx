@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { Link } from "react-router-dom";
+import axios from 'axios'
 import Bear from '../images/Bear.jpg';
 import '../styles/Home.css'
 import ContextMenu from '../Components/ContextMenu'
@@ -8,6 +9,25 @@ const Home = (props) => {
 
   const containerRef = useRef(null);
   const mapRef = useRef(null)
+
+  const createIncident = (e) =>{
+
+    let newIncident = {
+      Guest_Name: "Bobby",
+      Responder_Name: "Jim",
+      Incident_Info: "It happened on Bear Peak",
+      Personnel: "Stew, Donny, and some park dude",
+      Gear: "Skis and bindings, No Helmet!!",
+      Features: "The BIG one"
+    }
+
+    axios.post("http://localhost:8000/api/incident/new",newIncident)
+    .then(res => {
+      console.log("Incident Created", res.data)
+    }).catch(err =>{
+      console.log("We've got errors",err)
+    })
+  }
 
   return (
     <div>
@@ -36,7 +56,8 @@ const Home = (props) => {
           </li>
           <li>
             <Link
-              to="/incident">
+              to="/incident"
+              onClick={createIncident}>
               Incident
             </Link>
           </li>
