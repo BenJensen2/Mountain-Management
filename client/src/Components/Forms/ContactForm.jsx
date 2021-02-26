@@ -54,7 +54,7 @@ const ContactForm = ({ title, contactType }) => {
 
   const collapseBodyHandler = (e) => {
     let currentDisplay = window.getComputedStyle(e.target.nextSibling).getPropertyValue('display')
-    if (currentDisplay == "none") {
+    if (currentDisplay === "none") {
       e.target.nextSibling.style.display = "block";
     } else {
       e.target.nextSibling.style.display = "none";

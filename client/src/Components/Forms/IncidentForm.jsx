@@ -5,6 +5,7 @@ import MultipleSelectButtons from '../MultipleSelectButtons'
 import ContactForm from './ContactForm'
 import ResponderForm from './ResponderForm'
 import StaffForm from './StaffForm'
+import SkiForm from './SkiForm'
 
 const IncidentForm = () => {
 
@@ -120,11 +121,7 @@ const IncidentForm = () => {
           <div className="card-header" onClick={collapseBodyHandler}>Gear</div>
           <div className="card-body">
             {activityType === "skiing" &&
-              <ul>
-                <li>Skis</li>
-                <li>Boots</li>
-                <li>Bindings</li>
-              </ul>
+              <SkiForm />
             }
             {activityType === "boarding" &&
               <ul>
