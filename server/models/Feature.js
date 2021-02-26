@@ -3,8 +3,10 @@ const mongoose = require("mongoose");
 const FeatureSchema = new mongoose.Schema(
   {
     Name: String,
-    Location: String,
+    Type: String,
     Run: String,
+    Location: String,
+    Difficulty:String,
   },
   { timestamps: true }
 );

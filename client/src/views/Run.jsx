@@ -1,8 +1,8 @@
 import React from 'react';
-import IncidentForm from '../Components/IncidentForms/IncidentForm'
+import RunForm from '../Components/RunForms/NewRunForm'
 import { Link } from 'react-router-dom'
 
-const Incident = () => {
+const Run = () => {
   return (
     <div>
       <Link
@@ -10,11 +10,11 @@ const Incident = () => {
           Home
       </Link>
       <h1>
-        Incident
+        Run
       </h1>
-      <IncidentForm />
+      <RunForm />
     </div>
   )
 }
 
-export default Incident
+export default Run

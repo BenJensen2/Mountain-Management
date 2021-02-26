@@ -1,35 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import NewFeatureForm from '../Components/FeatureForms/NewFeatureForm'
 
-const AllMembers = (props) => {
+const AllFeatures = (props) => {
 
-  // Full members list
-  const [members, setMembers] = useState();
-  // To ensure all members are loaded before display
+  // Full features list
+  const [features, setFeatures] = useState();
+  // To ensure all features are loaded before display
   const [loaded, setLoaded] = useState(false);
-  const [memberFormDisplay, setMemberFormDisplay] = useState(false);
+  const [featureFormDisplay, setFeatureFormDisplay] = useState(false);
 
-  // Get all members as the page loads
+  // Get all features as the page loads
   useEffect(() => {
-    getMembers();
+    getFeatures();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Sorts membersList Last_Name from a to z
-  const sorted = (membersList) => {
-    return membersList.sort((a, b) => a.Last_Name.localeCompare(b.Last_Name))
+  // Sorts featuresList Last_Name from a to z
+  const sorted = (featuresList) => {
+    return featuresList.sort((a, b) => a.Name.localeCompare(b.Name))
   }
 
-  // Get members through all Members api
-  const getMembers = () => {
-    axios.get("http://localhost:8000/api/allMembers")
+  // Get features through all Features api
+  const getFeatures = () => {
+    axios.get("http://localhost:8000/api/allFeatures")
       .then(res => {
-        // console.log("These are our members")
-        // console.log(res.data)
-        setMembers(sorted(res.data))
+        setFeatures(sorted(res.data))
         setLoaded(true)
-        // console.log("Sorted Members", sorted(res.data))
+        console.log(res.data)
       })
       .catch(err => {
         console.log("We have an error", err)
@@ -40,17 +39,21 @@ const AllMembers = (props) => {
       })
   }
 
-  const createMemberHandler = () => {
+  const createFeatureHandler = () => {
+    if (featureFormDisplay===false){
+      setFeatureFormDisplay(true);
+    } else{
+      setFeatureFormDisplay(false)
+    }
     // console.log("Let's add someone!!");
-    setMemberFormDisplay(true);
   };
 
-  const deleteMember = (memberId) => {
-    console.log("Deleting Member")
-    axios.delete(`http://localhost:8000/api/member/delete/${memberId}`)
+  const deleteFeature = (featureId) => {
+    console.log("Deleting Feature")
+    axios.delete(`http://localhost:8000/api/feature/delete/${featureId}`)
       .then(res => {
-        console.log("Member Deleted")
-        setMembers(members.filter((member) => member._id !== memberId));
+        console.log("Feature Deleted")
+        setFeatures(features.filter((feature) => feature._id !== featureId));
       })
       .catch(err => {
         console.log("We have an error", err)
@@ -67,13 +70,13 @@ const AllMembers = (props) => {
       >Home
       </Link>
       <h1>
-        All Members
+        All Features
       </h1>
-      <button onClick={(e) => { createMemberHandler() }} >Add a new member</button>
-      {/* {
-        memberFormDisplay &&
-        <MemberForm />
-      } */}
+      <button onClick={(e) => { createFeatureHandler() }} >Add a new feature</button>
+      {
+        featureFormDisplay &&
+        <NewFeatureForm />
+      }
       {/* Include search bar. Auto update as typing */}
       <table>
         <thead>
@@ -85,28 +88,28 @@ const AllMembers = (props) => {
           </tr>
         </thead>
         <tbody>
-          {loaded && members.map((member) =>
-            <tr key={member._id}>
-              <td>{member.Last_Name}</td>
-              <td>{member.First_Name}</td>
-              <td>{member.Email_Address}</td>
+          {loaded && features.map((feature) =>
+            <tr key={feature._id}>
+              <td>{feature.Last_Name}</td>
+              <td>{feature.First_Name}</td>
+              <td>{feature.Email_Address}</td>
               <td>
                 <ul>
 
-                  {member.Position.map((position) =>
+                  {feature.Position.map((position) =>
                     <li key={position} >
                       {position}
                     </li>
                   )}
                 </ul>
               </td>
-              {/* <td>{member.Position}</td> */}
+              {/* <td>{feature.Position}</td> */}
               <td>
                 <button>
                   {/* <Link
                     to={{
-                      pathname: `/member/${member._id}`,
-                      state: { memberId: `${member._id}` }
+                      pathname: `/feature/${feature._id}`,
+                      state: { featureId: `${feature._id}` }
                     }}>
                     Edit
                       </Link> */}
@@ -114,7 +117,7 @@ const AllMembers = (props) => {
                 </button>
               </td>
               <td>
-                <button onClick={() => deleteMember(member._id)}>
+                <button onClick={() => deleteFeature(feature._id)}>
                   Delete
                     </button>
               </td>
@@ -126,4 +129,4 @@ const AllMembers = (props) => {
   )
 }
 
-export default AllMembers;
+export default AllFeatures;

@@ -1,6 +1,7 @@
 const MemberController = require("../controllers/MemberController");
 const IncidentController = require("../controllers/IncidentController");
 const GuestController = require("../controllers/GuestController");
+const RunController = require("../controllers/RunController");
 const FeatureController = require("../controllers/FeatureController");
 
 module.exports = function (app) {
@@ -31,6 +32,13 @@ module.exports = function (app) {
   app.post("/api/guest/new", GuestController.createGuest);
   app.get("/api/guest/:id", GuestController.getGuest);
   app.delete("/api/guest/delete/:id", GuestController.deleteGuest);
+
+  // RUNS
+  app.get("/api/index", RunController.index);
+  app.get("/api/allRuns", RunController.getRuns);
+  app.post("/api/run/new", RunController.createRun);
+  app.get("/api/run/:id", RunController.getRun);
+  app.delete("/api/run/delete/:id", RunController.deleteRun);
 
   // FEATURES
   app.get("/api/index", FeatureController.index);

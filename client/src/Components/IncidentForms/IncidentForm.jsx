@@ -7,7 +7,7 @@ import ResponderForm from './ResponderForm'
 import StaffForm from './StaffForm'
 import SkiForm from './SkiForm'
 import BoardForm from './BoardForm'
-import ManMadeFeatureForm from './ManMadeFeatureForm'
+// import ManMadeFeatureForm from './ManMadeFeatureForm'
 
 const IncidentForm = () => {
 
@@ -145,9 +145,9 @@ const IncidentForm = () => {
           <div className="card">
             <div className="card-header" onClick={collapseBodyHandler}>Features</div>
             <div className="card-body">
-              {collisionTypes.includes("manMade") &&
+              {/* {collisionTypes.includes("manMade") &&
                 <ManMadeFeatureForm/>
-              }
+              } */}
               {collisionTypes.includes("natural") &&
                 <div>Natural Feature</div>
               }

@@ -15,44 +15,14 @@ const Home = (props) => {
         <h1 className="home-header" >
           HomePage
       </h1>
-        <ul>
-          <li>
-            <Link
-              to="/allMembers">
-              All Members
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/allFeatures">
-              All Features
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/map2D">
-              Map 2D
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/map3D">
-              Map 3D
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/incident">
-              Incident
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/feature">
-              Feature
-            </Link>
-          </li>
-        </ul>
+        <Link to="/allMembers">| All Members </Link>
+        <Link to="/allFeatures">| All Features </Link>
+        <Link to="/allRuns">| All Runs </Link>
+        <Link to="/map2D">| Map 2D </Link>
+        <Link to="/map3D">| Map 3D </Link>
+        <Link to="/incident">| Incident </Link>
+        <Link to="/feature">| Feature </Link>
+        <Link to="/run">| Run </Link>
       </header>
       <div className="trail-map" ref={containerRef}>
         <ContextMenu parentRef={containerRef}

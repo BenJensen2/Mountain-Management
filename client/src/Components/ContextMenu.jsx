@@ -74,19 +74,25 @@ const ContextMenu = ({ parentRef, mapRef }) => {
         </li>
         <li className="context-item">
           <Link
-            to="/incident">
+            to="/feature">
             Feature
           </Link>
         </li>
         <li className="context-item">
           <Link
-            to="/incident">
+            to="/run">
+            Run
+          </Link>
+        </li>
+        <li className="context-item">
+          <Link
+            to="/investigation">
             Investigation
           </Link>
         </li>
         <li className="context-item">
           <Link
-            to="/incident">
+            to="/safety">
             Safety
           </Link>
         </li>

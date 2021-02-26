@@ -39,7 +39,7 @@ const FeatureForm = (props) => {
           <div>
             <label htmlFor="">
               Feature Type
-                <select name="" value={type} onChange={e => setType(e.target.value)}>
+              <select name="" value={type} onChange={e => setType(e.target.value)}>
                 <option value="tree">Tree</option>
                 <option value="rock">Rock</option>
                 <option value="bush">Bush</option>

@@ -1,11 +1,13 @@
 import "./App.css";
 import AllMembers from "./views/AllMembers";
+import AllFeatures from "./views/AllFeatures"
+import AllRuns from "./views/AllRuns"
 import Home from "./views/Home";
 import Map2D from "./views/Map2D";
 import Map3D from "./views/Map3D";
 import Incident from "./views/Incident";
 import Feature from "./views/Feature";
-import AllFeatures from "./views/AllFeatures"
+import Run from "./views/Run";
 import { Route, Switch } from "react-router-dom";
 
 function App() {
@@ -19,6 +21,9 @@ function App() {
         <Route path="/allMembers">
           <AllMembers />
         </Route>
+        <Route path="/allRuns">
+          <AllRuns />
+        </Route>
         <Route path="/feature">
           <Feature />
         </Route>
@@ -30,6 +35,9 @@ function App() {
         </Route>
         <Route path="/map2D">
           <Map2D />
+        </Route>
+        <Route path="/run">
+          <Run />
         </Route>
         <Route path="/">
           <Home />

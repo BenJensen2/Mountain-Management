@@ -42,8 +42,9 @@ const AllMembers = (props) => {
   }
 
   const createMemberHandler = () => {
-    // console.log("Let's add someone!!");
-    setMemberFormDisplay(true);
+    if (memberFormDisplay === false) {
+      setMemberFormDisplay(true);
+    } else { setMemberFormDisplay(false) }
   };
 
   const deleteMember = (memberId) => {

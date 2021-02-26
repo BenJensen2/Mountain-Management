@@ -1,5 +1,5 @@
 import React from 'react';
-import FeatureForm from '../Components/FeatureForms/FeatureForm'
+import FeatureForm from '../Components/FeatureForms/NewFeatureForm'
 import { Link } from 'react-router-dom'
 
 const Feature = () => {

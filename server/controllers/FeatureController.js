@@ -14,8 +14,6 @@ module.exports = {
       .then((features) => {
         // user is the parameter passed into .then function
         console.log("We are looking for all the features");
-        // console.log(res.json(feature))
-        // console.log(features)
         console.log("We found the features");
         res.json(features); // responding with a .json object of the features
       })
