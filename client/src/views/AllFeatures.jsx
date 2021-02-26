@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import MemberForm from '../Components/IncidentForms/MemberForm'
 
 const AllMembers = (props) => {
 
@@ -71,10 +70,10 @@ const AllMembers = (props) => {
         All Members
       </h1>
       <button onClick={(e) => { createMemberHandler() }} >Add a new member</button>
-      {
+      {/* {
         memberFormDisplay &&
         <MemberForm />
-      }
+      } */}
       {/* Include search bar. Auto update as typing */}
       <table>
         <thead>

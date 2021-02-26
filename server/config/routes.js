@@ -1,9 +1,10 @@
 const MemberController = require("../controllers/MemberController");
 const IncidentController = require("../controllers/IncidentController");
 const GuestController = require("../controllers/GuestController");
+const FeatureController = require("../controllers/FeatureController");
 
 module.exports = function (app) {
-  //MEMBERS
+  // MEMBERS
   app.get("/api/index", MemberController.index);
   app.get("/api/allMembers", MemberController.getMembers);
   app.post("/api/member/new", MemberController.createMember);
@@ -30,5 +31,12 @@ module.exports = function (app) {
   app.post("/api/guest/new", GuestController.createGuest);
   app.get("/api/guest/:id", GuestController.getGuest);
   app.delete("/api/guest/delete/:id", GuestController.deleteGuest);
+
+  // FEATURES
+  app.get("/api/index", FeatureController.index);
+  app.get("/api/allFeatures", FeatureController.getFeatures);
+  app.post("/api/feature/new", FeatureController.createFeature);
+  app.get("/api/feature/:id", FeatureController.getFeature);
+  app.delete("/api/feature/delete/:id", FeatureController.deleteFeature);
 
 };

@@ -24,6 +24,12 @@ const Home = (props) => {
           </li>
           <li>
             <Link
+              to="/allFeatures">
+              All Features
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/map2D">
               Map 2D
             </Link>
@@ -38,6 +44,12 @@ const Home = (props) => {
             <Link
               to="/incident">
               Incident
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/feature">
+              Feature
             </Link>
           </li>
         </ul>

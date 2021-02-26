@@ -1,8 +1,8 @@
 import React from 'react';
-import IncidentForm from '../Components/Forms/IncidentForm';
+import FeatureForm from '../Components/FeatureForms/FeatureForm'
 import { Link } from 'react-router-dom'
 
-const Incident = () => {
+const Feature = () => {
   return (
     <div>
       <Link
@@ -10,11 +10,11 @@ const Incident = () => {
           Home
       </Link>
       <h1>
-        Incident
+        Feature
       </h1>
-      <IncidentForm />
+      <FeatureForm />
     </div>
   )
 }
 
-export default Incident
+export default Feature

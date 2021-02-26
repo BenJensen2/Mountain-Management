@@ -7,6 +7,7 @@ import ResponderForm from './ResponderForm'
 import StaffForm from './StaffForm'
 import SkiForm from './SkiForm'
 import BoardForm from './BoardForm'
+import ManMadeFeatureForm from './ManMadeFeatureForm'
 
 const IncidentForm = () => {
 
@@ -36,7 +37,6 @@ const IncidentForm = () => {
       <h1>
         Incident Form
       </h1>
-
       {/* Location */}
       <form className="location-form" action="">
         {/* <Map2D /> */}
@@ -146,7 +146,7 @@ const IncidentForm = () => {
             <div className="card-header" onClick={collapseBodyHandler}>Features</div>
             <div className="card-body">
               {collisionTypes.includes("manMade") &&
-                <div>Man Made Feature</div>
+                <ManMadeFeatureForm/>
               }
               {collisionTypes.includes("natural") &&
                 <div>Natural Feature</div>
