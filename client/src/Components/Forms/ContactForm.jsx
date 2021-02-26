@@ -23,33 +23,27 @@ const ContactForm = ({ title, contactType }) => {
   useEffect(() => {
   })
 
-  // On form submit, create a new member
-  const formHandler = (e) => {
+  // On form submit, create a new contact
+  const formSubmit = (e) => {
     e.preventDefault()
-    let newMember = {
+    let newContact = {
       First_Name: firstName,
       Last_Name: lastName,
-      Email_Address: email,
       Phone_Number: phoneNumber,
+      Email: email,
+      Age: 22,
+      Address: `${address} ${city}, ${state} ${zip}`,
+      Occupation: occupation,
+      Ticket_Number: ticketNumber,
     }
-    console.log("Creating a new member!")
-    axios.post("http://localhost:8000/api/member/new", newMember)
+
+    axios.post(`http://localhost:8000/api/${contactType}/new`, newContact)
       .then(res => {
         console.log(res.data)
-        window.location.reload()
       })
-      // ,then()
       .catch(err => {
         console.log("We've got errors")
-        // console.log("Error",
-        // err.response.data.errors)
-        // console.log("Error",
-        // err.response.data.errors.name.properties.message)
-        // setErrors(err.response.data.errors.name.properties.message)
       })
-
-    // Axios post to new member
-
   }
 
   const collapseBodyHandler = (e) => {
@@ -63,7 +57,7 @@ const ContactForm = ({ title, contactType }) => {
 
 
   return (
-    <div className="info" onSubmit={formHandler}>
+    <div className="info">
       <div className="info-header" onClick={collapseBodyHandler}>{title}</div>
       <div className="info-body">
         <div className="top-item text-input">
@@ -142,6 +136,7 @@ const ContactForm = ({ title, contactType }) => {
             </div>
           </div>
         </div>
+        <button onClick={formSubmit}>Submit</button>
       </div>
     </div>
   )

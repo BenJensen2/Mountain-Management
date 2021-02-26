@@ -9,7 +9,7 @@ const GuestSchema = new mongoose.Schema(
     Age: Number,
     Address: String,
     Occupation: String,
-    Access_Level: Number,
+    Ticket_Number: String,
   },
   { timestamps: true }
 );
