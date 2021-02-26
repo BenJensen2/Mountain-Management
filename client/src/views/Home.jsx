@@ -10,25 +10,6 @@ const Home = (props) => {
   const containerRef = useRef(null);
   const mapRef = useRef(null)
 
-  const createIncident = (e) =>{
-
-    let newIncident = {
-      Guest_Name: "Bobby",
-      Responder_Name: "Jim",
-      Incident_Info: "It happened on Bear Peak",
-      Personnel: "Stew, Donny, and some park dude",
-      Gear: "Skis and bindings, No Helmet!!",
-      Features: "The BIG one"
-    }
-
-    axios.post("http://localhost:8000/api/incident/new",newIncident)
-    .then(res => {
-      console.log("Incident Created", res.data)
-    }).catch(err =>{
-      console.log("We've got errors",err)
-    })
-  }
-
   return (
     <div>
       <header>
@@ -56,8 +37,7 @@ const Home = (props) => {
           </li>
           <li>
             <Link
-              to="/incident"
-              onClick={createIncident}>
+              to="/incident">
               Incident
             </Link>
           </li>

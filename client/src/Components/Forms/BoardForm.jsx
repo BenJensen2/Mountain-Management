@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import './SkiForm.css'
+import './BoardForm.css'
 import axios from 'axios';
 
-const SkiForm = () => {
+const BoardForm = () => {
 
 
-  // Ski Info
-  const [skiIDNumber, setSkiIDNumber] = useState("")
-  const [skiOwnedBy, setSkiOwnedBy] = useState("");
-  const [skiShopName, setSkiShopName] = useState("");
-  const [skiLastAdjustment, setSkiLastAdjustment] = useState("");
-  const [skiMake, setSkiMake] = useState("");
-  const [skiModel, setSkiModel] = useState("");
-  const [skiSize, setSkiSize] = useState("");
-  const [skiRemovedBy, setSkiRemovedBy] = useState("");
-  const [skiReleasedTo, setSkiReleasedTo] = useState("");
+  // Board Info
+  const [boardIDNumber, setBoardIDNumber] = useState("")
+  const [boardOwnedBy, setBoardOwnedBy] = useState("");
+  const [boardShopName, setBoardShopName] = useState("");
+  const [boardLastAdjustment, setBoardLastAdjustment] = useState("");
+  const [boardMake, setBoardMake] = useState("");
+  const [boardModel, setBoardModel] = useState("");
+  const [boardSize, setBoardSize] = useState("");
+  const [boardRemovedBy, setBoardRemovedBy] = useState("");
+  const [boardReleasedTo, setBoardReleasedTo] = useState("");
 
   // Binding Info
   const [bindingIDNumber, setBindingIDNumber] = useState("")
@@ -24,7 +24,6 @@ const SkiForm = () => {
   const [bindingMake, setBindingMake] = useState("");
   const [bindingModel, setBindingModel] = useState("");
   const [bindingSize, setBindingSize] = useState("");
-  const [din, setDIN] = useState("");
   const [bindingRemovedBy, setBindingRemovedBy] = useState("");
   const [bindingReleasedTo, setBindingReleasedTo] = useState("");
 
@@ -46,10 +45,10 @@ const SkiForm = () => {
   const formHandler = (e) => {
     e.preventDefault()
     let newMember = {
-      First_Name: skiMake,
-      Last_Name: skiModel,
-      Email_Address: skiOwnedBy,
-      Phone_Number: skiRemovedBy,
+      First_Name: boardMake,
+      Last_Name: boardModel,
+      Email_Address: boardOwnedBy,
+      Phone_Number: boardRemovedBy,
     }
     console.log("Creating a new member!")
     axios.post("http://localhost:8000/api/member/new", newMember)
@@ -83,42 +82,42 @@ const SkiForm = () => {
 
   return (
     <div className="info" onSubmit={formHandler}>
-      <div className="info-header" onClick={collapseBodyHandler}>Ski Setup</div>
+      <div className="info-header" onClick={collapseBodyHandler}>Board Setup</div>
       <div className="info-body">
 
         <br /><br /><br />
-        <div> {/* Ski Info */}
-          <div>Skis</div>
+        <div> {/* Board Info */}
+          <div>Board</div>
           <br />
           <div className="column-1">
             <div className="form-item text-input">
               <label>
                 ID Number
-                <input type="text" value={skiIDNumber} onChange={e => setSkiIDNumber(e.target.value)} />
+                <input type="text" value={boardIDNumber} onChange={e => setBoardIDNumber(e.target.value)} />
               </label>
             </div>
             <div className="form-item text-input">
               <label>
                 Shop Name
-                <input type="text" value={skiShopName} onChange={e => setSkiShopName(e.target.value)} />
+                <input type="text" value={boardShopName} onChange={e => setBoardShopName(e.target.value)} />
               </label>
             </div>
             <div className="form-item text-input">
               <label>
                 Make
-                <input type="text" value={skiMake} onChange={e => setSkiMake(e.target.value)} />
+                <input type="text" value={boardMake} onChange={e => setBoardMake(e.target.value)} />
               </label>
             </div>
             <div className="form-item text-input">
               <label>
                 Size
-                <input type="text" value={skiSize} onChange={e => setSkiSize(e.target.value)} />
+                <input type="text" value={boardSize} onChange={e => setBoardSize(e.target.value)} />
               </label>
             </div>
             <div className="form-item text-input">
               <label>
                 Removed By
-                <input type="tel" value={skiRemovedBy} onChange={e => setSkiRemovedBy(e.target.value)} />
+                <input type="tel" value={boardRemovedBy} onChange={e => setBoardRemovedBy(e.target.value)} />
               </label>
             </div>
 
@@ -127,26 +126,26 @@ const SkiForm = () => {
             <div className="form-item text-input">
               <label>
                 Owned By
-                <input type="text" value={skiOwnedBy} onChange={e => setSkiOwnedBy(e.target.value)} />
+                <input type="text" value={boardOwnedBy} onChange={e => setBoardOwnedBy(e.target.value)} />
               </label>
             </div>
             <div className="form-item text-input">
               <label>
                 Last Adjustment
-                <input type="text" value={skiLastAdjustment} onChange={e => setSkiLastAdjustment(e.target.value)} />
+                <input type="text" value={boardLastAdjustment} onChange={e => setBoardLastAdjustment(e.target.value)} />
               </label>
             </div>
             <div className="form-item text-input">
               <label>
                 Model
-                <input type="text" value={skiModel} onChange={e => setSkiModel(e.target.value)} />
+                <input type="text" value={boardModel} onChange={e => setBoardModel(e.target.value)} />
               </label>
             </div>
             <div className="blank-form-item text-input"></div>
             <div className="form-item text-input">
               <label>
                 Released To
-                <input type="text" value={skiReleasedTo} onChange={e => setSkiReleasedTo(e.target.value)} />
+                <input type="text" value={boardReleasedTo} onChange={e => setBoardReleasedTo(e.target.value)} />
               </label>
             </div>
           </div>
@@ -207,12 +206,7 @@ const SkiForm = () => {
                 <input type="text" value={bindingModel} onChange={e => setBindingModel(e.target.value)} />
               </label>
             </div>
-            <div className="form-item text-input">
-              <label>
-                Din
-                <input type="text" value={din} onChange={e => setDIN(e.target.value)} />
-              </label>
-            </div>
+            <div className="blank-form-item text-input"></div>
             <div className="form-item text-input">
               <label>
                 Released To
@@ -293,4 +287,4 @@ const SkiForm = () => {
   )
 }
 
-export default SkiForm;
+export default BoardForm;

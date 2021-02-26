@@ -6,6 +6,7 @@ import ContactForm from './ContactForm'
 import ResponderForm from './ResponderForm'
 import StaffForm from './StaffForm'
 import SkiForm from './SkiForm'
+import BoardForm from './BoardForm'
 
 const IncidentForm = () => {
 
@@ -124,11 +125,7 @@ const IncidentForm = () => {
               <SkiForm />
             }
             {activityType === "boarding" &&
-              <ul>
-                <li>Board</li>
-                <li>Boots</li>
-                <li>Bindings</li>
-              </ul>
+              <BoardForm/>
             }
             {activityType === "snowSkating" &&
               <ul>
