@@ -1,22 +1,36 @@
 import "./App.css";
+
+import Navbar from "./views/Navbar";
+
+import AllFeatures from "./views/AllFeatures";
+import AllLifts from "./views/AllLifts";
 import AllMembers from "./views/AllMembers";
-import AllFeatures from "./views/AllFeatures"
-import AllRuns from "./views/AllRuns"
+import AllRuns from "./views/AllRuns";
+import CurrentMap from "./views/CurrentMap";
+import Dispatch from "./views/Dispatch";
+import Feature from "./views/Feature";
 import Home from "./views/Home";
+import Incident from "./views/Incident";
+import LiftOps from "./views/LiftOps";
 import Map2D from "./views/Map2D";
 import Map3D from "./views/Map3D";
-import Incident from "./views/Incident";
-import Feature from "./views/Feature";
+import Patrol from "./views/Patrol";
+import ParkStaff from "./views/ParkStaff";
 import Run from "./views/Run";
+
 import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
+      <Navbar/>
       <Switch>
         {/* Will select the first matching route */}
         <Route path="/allFeatures">
           <AllFeatures />
+        </Route>
+        <Route path="/allLifts">
+          <AllLifts />
         </Route>
         <Route path="/allMembers">
           <AllMembers />
@@ -24,17 +38,32 @@ function App() {
         <Route path="/allRuns">
           <AllRuns />
         </Route>
+        <Route path="/currentMap">
+          <CurrentMap />
+        </Route>
+        <Route path="/dispatch">
+          <Dispatch />
+        </Route>
         <Route path="/feature">
           <Feature />
         </Route>
         <Route path="/incident">
           <Incident />
         </Route>
+        <Route path="/liftOps">
+          <LiftOps />
+        </Route>
         <Route path="/map3D">
           <Map3D />
         </Route>
         <Route path="/map2D">
           <Map2D />
+        </Route>
+        <Route path="/parkStaff">
+          <ParkStaff />
+        </Route>
+        <Route path="/patrol">
+          <Patrol />
         </Route>
         <Route path="/run">
           <Run />

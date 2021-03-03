@@ -6,7 +6,7 @@ import {
   the_wedge
 } from '../data/Runs'
 
-import { runs } from '../data/Runs'
+import { runs, runData, liftData, liftHouseData } from '../data/Runs'
 
 // import {char_1} from '../data/Lifts'
 
@@ -18,9 +18,6 @@ const Map = () => {
 
 
   useEffect(() => {
-    console.log("Exhibition", exhibition)
-    console.log("All Runs", runs)
-    console.log("The Wedge", runs.data.features[0])
     console.log("Map Page Loading")
 
     // Enable default context menu (Right click)
@@ -41,12 +38,12 @@ const Map = () => {
         container: 'mapContainer',
         style: 'mapbox://styles/mapbox/satellite-v9',
         center: [
-          -116.85972690582275,
-          34.22163216967793
+          -116.85976982116699,
+          34.21923687533004
         ],
-        // center: [-116.84, 34.23], // starting position [lng, lat]
+        // center: [-116.84, 34.5], // starting position [lng, lat]
         bearing: 180,
-        zoom: 14.2, // starting zoom,
+        zoom: 15, // starting zoom,
         // Calculate zoom to fit screen size
         maxBounds: [
           [
@@ -153,6 +150,47 @@ const Map = () => {
 
         map.addSource('runs', runs);
 
+        map.addSource('runData', runData)
+        map.addLayer({
+          "id": "Run Data",
+          "type": "line",
+          "source": "runData",
+          'layout': {
+            'line-join': 'round',
+            'line-cap': 'round'
+          },
+          'paint': {
+            'line-color': '#00FF00',
+            'line-width': 2
+          }
+        });
+
+        map.addSource('liftData', liftData)
+
+        map.addLayer({
+          "id": "Lift Data",
+          "type": "line",
+          "source": "liftData",
+          'layout': {
+            'line-join': 'round',
+            'line-cap': 'round'
+          },
+          'paint': {
+            'line-color': '#FF1493',
+            'line-width': 2
+          }
+        });
+
+        map.addSource('liftHouseData', liftHouseData)
+
+        map.addLayer({
+          "id": "Lift House Data",
+          "type": "circle",
+          "source": "liftHouseData",
+          "paint": {
+            'circle-color': '#00FF00',
+          }
+        });
 
         map.addLayer({
           "id": "Exhibition Polygon",
@@ -176,7 +214,7 @@ const Map = () => {
             'line-cap': 'round'
           },
           'paint': {
-            'line-color': '#00FF00',
+            'line-color': '#FF00E6',
             'line-width': 2
           },
           "filter": ["==", "name", 'The Wedge']

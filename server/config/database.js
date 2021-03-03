@@ -17,10 +17,12 @@ require("../models/Personnel/Staff");
 require("../models/Personnel/Volunteer");
 
 // General
+require("../models/Dispatch");
 require("../models/Feature");
 require("../models/Incident");
 require("../models/Location");
-require("../models/Run")
+require("../models/Run");
+require("../models/Lift");
 require("../models/Member");
 
 // Standalone database with Network updating & Connectivity.

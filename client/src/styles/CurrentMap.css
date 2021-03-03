@@ -1,0 +1,35 @@
+#mapContainer, .left-menu, .right-menu{
+  display: inline-block;
+  height: 90vh;
+  border: solid 1px red;
+  vertical-align: top;
+}
+
+#mapContainer{
+  /* margin: auto; */
+  width: 50vw;
+  height: 90vh;
+}
+
+.left-menu, .right-menu{
+  width: 20vw;
+}
+
+.layers-list{
+  width: 150px;
+  margin: auto;
+  text-align: left;
+}
+
+.checkbox{
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border: solid gray 1px;
+  border-radius: 2px;
+}
+
+.left-menu div{
+  margin-top: 10px;
+  height: 30vh;
+}

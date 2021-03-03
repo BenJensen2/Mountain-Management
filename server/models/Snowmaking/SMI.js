@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 
-const LiftSchema = new mongoose.Schema(
+const SMISchema = new mongoose.Schema(
   {
     Name: String,
-    Number: Number,
+    Number: String,
     Location: String,
-    Status: String
+    Run: String,
   },
   { timestamps: true }
 );
 
-mongoose.model("Lift", LiftSchema);
+mongoose.model("SMI", SMISchema);

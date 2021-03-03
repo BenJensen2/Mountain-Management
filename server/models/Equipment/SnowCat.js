@@ -1,13 +1,12 @@
 const mongoose = require("mongoose");
 
-const LiftSchema = new mongoose.Schema(
+const SnowCatSchema = new mongoose.Schema(
   {
     Name: String,
-    Number: Number,
+    Number: String,
     Location: String,
-    Status: String
   },
   { timestamps: true }
 );
 
-mongoose.model("Lift", LiftSchema);
+mongoose.model("SnowCat", SnowCatSchema);

@@ -2,7 +2,9 @@ const MemberController = require("../controllers/MemberController");
 const IncidentController = require("../controllers/IncidentController");
 const GuestController = require("../controllers/GuestController");
 const RunController = require("../controllers/RunController");
+const LiftController = require("../controllers/LiftController");
 const FeatureController = require("../controllers/FeatureController");
+const DispatchController = require("../controllers/DispatchController");
 
 module.exports = function (app) {
   // MEMBERS
@@ -40,11 +42,25 @@ module.exports = function (app) {
   app.get("/api/run/:id", RunController.getRun);
   app.delete("/api/run/delete/:id", RunController.deleteRun);
 
+  // LIFTS
+  app.get("/api/index", LiftController.index);
+  app.get("/api/allLifts", LiftController.getLifts);
+  app.post("/api/lift/new", LiftController.createLift);
+  app.get("/api/lift/:id", LiftController.getLift);
+  app.delete("/api/lift/delete/:id", LiftController.deleteLift);
+
   // FEATURES
   app.get("/api/index", FeatureController.index);
   app.get("/api/allFeatures", FeatureController.getFeatures);
   app.post("/api/feature/new", FeatureController.createFeature);
   app.get("/api/feature/:id", FeatureController.getFeature);
   app.delete("/api/feature/delete/:id", FeatureController.deleteFeature);
+
+  // DISPATCHES
+  app.get("/api/index", DispatchController.index);
+  app.get("/api/allDispatches", DispatchController.getDispatches);
+  app.post("/api/dispatch/new", DispatchController.createDispatch);
+  app.get("/api/dispatch/:id", DispatchController.getDispatch);
+  app.delete("/api/dispatch/delete/:id", DispatchController.deleteDispatch);
 
 };

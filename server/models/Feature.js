@@ -6,7 +6,7 @@ const FeatureSchema = new mongoose.Schema(
     Type: String,
     Run: String,
     Location: String,
-    Difficulty:String,
+    Difficulty: String
   },
   { timestamps: true }
 );

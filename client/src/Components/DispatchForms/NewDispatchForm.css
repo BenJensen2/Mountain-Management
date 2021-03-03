@@ -1,0 +1,34 @@
+.dispatch-form{
+  margin: auto;
+  width:150px;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* input[type=text] {
+  display: block;
+  width: auto;  
+} */
+
+ul {
+  padding: 0px;
+}
+
+li{
+  list-style-type: none;
+  margin-bottom: 5px;
+}
+
+.submit-button{
+margin: auto;
+}
+
+.positions-label{
+  display: block;
+  margin-bottom: 5px;
+}
+
+.positions-type{
+  margin-left: 10px;
+}

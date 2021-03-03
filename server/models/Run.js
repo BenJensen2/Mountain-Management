@@ -6,7 +6,8 @@ const RunSchema = new mongoose.Schema(
     Location: String,
     Difficulty: String,
     GeoLine: String,
-    GeoPoly: String
+    GeoPoly: String,
+    Status: String,
   },
   { timestamps: true }
 );
