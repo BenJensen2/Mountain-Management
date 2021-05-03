@@ -5,19 +5,19 @@ import axios from 'axios';
 const DispatchForm = (props) => {
 
   const [number, setNumber] = useState("");
-  const [status, setStatus] = useState("")
+  // const [status, setStatus] = useState("")
   const [type, setType] = useState("");
-  const [runs, setRuns] = useState("");
-  const [loaded, setLoaded] = useState(false);
-  const [currentRun, setCurrentRun] = useState("");
+  // const [runs, setRuns] = useState("");
+  // const [loaded, setLoaded] = useState(false);
+  // const [currentRun, setCurrentRun] = useState("");
   const [location, setLocation] = useState("");
   const [originator, setOriginator] = useState("");
-  const [responder, setResponder] = useState("");
-  const [equipment, setEquipment] = useState("");
+  // const [responder, setResponder] = useState("");
+  // const [equipment, setEquipment] = useState("");
 
-  useEffect(() => {
-    getRuns()
-  }, [])
+  // useEffect(() => {
+  //   getRuns()
+  // }, [])
 
   // Sorts runsList Last_Name from a to z
   const sorted = (runsList) => {
@@ -25,34 +25,34 @@ const DispatchForm = (props) => {
   }
 
   // Get runs through all Runs api
-  const getRuns = () => {
-    axios.get("http://localhost:8000/api/allRuns")
-      .then(res => {
-        setRuns(sorted(res.data))
-        setLoaded(true)
-        console.log(res.data)
-      })
-      .catch(err => {
-        console.log("We have an error", err)
-        // console.log("This is the error", err.message)
-        if (err.message === "Network Error") {
-          console.log("The database is probably not connected")
-        }
-      })
-  }
+  // const getRuns = () => {
+  //   axios.get("http://localhost:8000/api/allRuns")
+  //     .then(res => {
+  //       setRuns(sorted(res.data))
+  //       setLoaded(true)
+  //       console.log(res.data)
+  //     })
+  //     .catch(err => {
+  //       console.log("We have an error", err)
+  //       // console.log("This is the error", err.message)
+  //       if (err.message === "Network Error") {
+  //         console.log("The database is probably not connected")
+  //       }
+  //     })
+  // }
 
   // On form submit, create a new feature
   const clickHandler = (e) => {
     e.preventDefault()
     let newDispatch = {
-      Number: number,
-      Status: status,
-      Type: type,
-      Run: currentRun,
-      Location: location,
-      Originator: originator,
-      Responder: responder,
-      Equipment: equipment
+      // Number: number,
+      // Status: status,
+      // Type: type,
+      // Run: currentRun,
+      // Location: location,
+      // Originator: originator,
+      // Responder: responder,
+      // Equipment: equipment
     }
     console.log("Creating a new dispatch!")
     axios.post("http://localhost:8000/api/dispatch/new", newDispatch)

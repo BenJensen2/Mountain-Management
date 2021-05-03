@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 // import DispatchForm from '../Components/DispatchForms/DispatchForm';
 // import axios from 'axios'
-import '../styles/ContextMenu.css'
+import './MountainOverviewContextMenu.css'
 
 const ContextMenu = ({ parentRef, mapRef }) => {
   const [isVisible, setVisibility] = useState(false);
@@ -13,8 +13,8 @@ const ContextMenu = ({ parentRef, mapRef }) => {
 
   useEffect(() => {
     const parent = parentRef.current
-    console.log("Parent", parent)
-    console.log(parent.getBoundingClientRect())
+    // console.log("Parent", parent)
+    // console.log(parent.getBoundingClientRect())
 
     if (!parent) {
       return;

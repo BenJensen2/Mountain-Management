@@ -1,0 +1,12 @@
+.left-data-panel,
+.mountain-map,
+.right-data-panel {
+  vertical-align: top;
+}
+
+.left-data-panel,
+.right-data-panel {
+  display: inline-block;
+  width: 10vw;
+  height: 90vh;
+}

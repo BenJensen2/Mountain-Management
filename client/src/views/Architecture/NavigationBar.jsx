@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../styles/Navbar.css'
-import BearLogo from '../images/Bear_Logo.png'
+import './NavigationBar.css'
+import BearLogo from '../../images/Bear_Logo.png'
 
-const NavBar = () => {
+const NavigationBar = () => {
 
-  const toggleHandler = (e) => {
-    console.log("Toggle")
-  }
+  // const toggleHandler = (e) => {
+  //   console.log("Toggle")
+  // }
   return (
     <div className="navbar">
       <div className="nav-left">
@@ -80,4 +80,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default NavigationBar
