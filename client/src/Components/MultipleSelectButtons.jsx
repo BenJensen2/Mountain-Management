@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './SelectButtons.css'
 
 const MultipleSelectButtons = ({ buttons, buttonValues, setButtonValues, shadowColor }) => {
+
+// useEffect (() => {
+//   console.log(buttons)
+// })
 
   const updateValue = (e) => {
     let newValues = [...buttonValues];

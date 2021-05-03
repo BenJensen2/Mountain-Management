@@ -86,7 +86,7 @@ const IncidentForm = () => {
                   buttons={[
                     ["Guest", "guest"],
                     ["Staff", "staff"],
-                    ["Lift Equipment", "liftEquipment"]
+                    ["Lift Equipment", "liftEquipment"],
                     ["Man Made Feature", "manMade"],
                     ["Natural Feature", "natural"]
                   ]}
