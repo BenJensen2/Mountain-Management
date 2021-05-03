@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import './QuickLinks.css'
 
 const QuickLinks = () => {
   return (
     <div className="quick-links">
+      <h4>Quick Links</h4>
       <div>
         <Link to="/allLifts">| All Lifts </Link>
         <Link to="/allMembers">| All Members </Link>
