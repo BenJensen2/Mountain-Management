@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 
 // Read Environment Variables
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 dotenv.config();
 
 // Ports
@@ -15,7 +15,7 @@ const cors = require("cors");
 app.use(cors());
 
 // Mapbox
-const mapBoxAT = process.env.mapBoxAT
+const mapBoxAT = process.env.mapBoxAT;
 
 app.use(express.json());
 
@@ -38,31 +38,30 @@ app.listen(port2, () => {
 
 // Hello
 app.get("/server", (req, res) => {
-	res.send("Hello from the Server!");
+  res.send("Hello from the Server!");
 });
 
 // Headers Log
-app.get('/requestHeaders', (req, res) => {
-  console.log(req.headers)
-  res.send("Headers in Node Log")
-})
+app.get("/requestHeaders", (req, res) => {
+  console.log(req.headers);
+  res.send("Headers in Node Log");
+});
 
 // Mapbox Key
-app.get('/mapboxKey',(req,res)=>{
-  res.send(mapBoxAT)
-})
-
+app.get("/mapboxKey", (req, res) => {
+  res.send(mapBoxAT);
+});
 
 // Environmental Variables
 app.get("/env", (req, res) => {
-	let test_secret_key = process.env.TEST_SECRET_KEY;
-	res.send(`The test secret key is: ${test_secret_key}`);
+  let test_secret_key = process.env.TEST_SECRET_KEY;
+  res.send(`The test secret key is: ${test_secret_key}`);
 });
 
 // Cookies
 // Production: Only send over HTTPS
 app.get("/cookie", (req, res) => {
-	res.cookie("my test cookie", "cookie data", { httpOnly: true }).json({
-		message: "This response is the cookie",
-	});
+  res.cookie("my test cookie", "cookie data", { httpOnly: true }).json({
+    message: "This response is the cookie",
+  });
 });

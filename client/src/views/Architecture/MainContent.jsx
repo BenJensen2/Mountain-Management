@@ -9,7 +9,7 @@ import MountainOverview from "../MountainOverview";
 // import CurrentMap from "./views/CurrentMap";
 // import Dispatch from "./views/Dispatch";
 // import Feature from "./views/Feature";
-// import Incident from "./views/Incident";
+import Incident from "../Need to Integrate/Incident";
 // import LiftOps from "./views/LiftOps";
 // import Map2D from "./views/Map2D";
 // import Map3D from "./views/Map3D";
@@ -43,9 +43,11 @@ const MainContent = (props) => {
         <Route path="/feature">
           <Feature />
         </Route>
-        <Route path="/incident">
+  */}
+  <Route path="/incident">
           <Incident />
         </Route>
+        {/*
         <Route path="/liftOps">
           <LiftOps />
         </Route>

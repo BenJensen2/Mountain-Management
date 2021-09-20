@@ -36,6 +36,11 @@ const NavigationBar = () => {
           to="/liftOps">
             Lift Ops
         </Link>
+        <Link
+          className="nav-link"
+          to="/management">
+            Management
+        </Link>
       </div>
       <div className="nav-right"></div>
     </div>
