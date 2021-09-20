@@ -10,7 +10,7 @@ Front End: 3000 (Default)
 
 ## Git Repository
 Local: Yes
-Remote: https://github.com/BenJensen2/BBSP.git
+Remote: https://github.com/BenJensen2/BBSP.git (Private)
 
 ## Stack
 - Node
@@ -39,9 +39,7 @@ None Yet
 Not current
 
 ### Security
-API Keys
-- Mapbox Access token in .env.local
-No Usernames & Passwords
+No Access tokens, Usernames or passwords included in repository
 
 #### Next Steps:
 1. Verify Routing & API Organization
@@ -51,9 +49,9 @@ No Usernames & Passwords
 4. Link data to API for submission
 
 #### Research
-Current Page: https://www.bigbearskipatrol.com
-Current Software: (1RISK) Electronitfied Form submission with dispatch and data overviews
-Other Software: Medic52, EDGEauditor
+- Current Page: https://www.bigbearskipatrol.com
+- Current Software: (1RISK) Electronitfied Form submission with dispatch and data overviews
+- Other Software: Medic52, EDGEauditor
 
 
 
