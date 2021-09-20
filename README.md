@@ -9,8 +9,8 @@ Big Bear Ski Patrol Website and Database
   - Start Point: ("/") Index.js/App.js/MainContent/MountainOverview
 
 ## Git Repository
-Local: Yes
-Remote: https://github.com/BenJensen2/BBSP.git (Private)
+- Local: Yes
+- Remote: https://github.com/BenJensen2/BBSP.git (Private)
 
 ## Stack
 - Node
