@@ -2,11 +2,11 @@
 Big Bear Ski Patrol Website and Database
 
 ## Basic Info
-Current Status: Operational
-Server: 8000 & 8001
-Database: BBSP
-Front End: 3000 (Default)
-- Start Point: ("/") Index.js/App.js/MainContent/MountainOverview
+- Current Status: Operational
+- Server: 8000 & 8001
+- Database: BBSP
+- Front End: 3000 (Default)
+  - Start Point: ("/") Index.js/App.js/MainContent/MountainOverview
 
 ## Git Repository
 Local: Yes
