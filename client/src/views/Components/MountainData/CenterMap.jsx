@@ -1,6 +1,6 @@
 import React from 'react';
-import '../MountainOverview/CenterMap.css'
-import MountainMap from '../MountainData/MountainMap'
+import './CenterMap.css'
+import MountainMap from './MountainMap'
 
 
 const CenterMap = () => {

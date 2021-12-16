@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import MemberForm from '../Components/IncidentForms/MemberForm'
+import MemberForm from '../Forms/IncidentForms/MemberForm'
 
 const AllMembers = (props) => {
 

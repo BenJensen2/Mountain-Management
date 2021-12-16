@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 // import DispatchForm from '../Components/DispatchForms/DispatchForm';
 // import axios from 'axios'
-import './MountainOverviewContextMenu.css'
+import '../../../styles/MountainOverviewContextMenu.css'
 
 const ContextMenu = ({ parentRef, mapRef }) => {
   const [isVisible, setVisibility] = useState(false);

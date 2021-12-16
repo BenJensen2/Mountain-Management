@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import NewFeatureForm from '../Components/FeatureForms/NewFeatureForm'
+import NewFeatureForm from '../Forms/FeatureForms/NewFeatureForm'
 
 const AllFeatures = (props) => {
 

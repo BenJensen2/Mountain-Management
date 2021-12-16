@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import NewLiftForm from '../Components/LiftForms/NewLiftForm'
+import NewLiftForm from '../Forms/LiftForms/NewLiftForm'
 
 const AllLifts = (props) => {
 

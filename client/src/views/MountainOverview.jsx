@@ -1,15 +1,25 @@
 import React from 'react';
-import LeftDataPanel from './Components/MountainOverview/LeftDataPanel'
-import CenterMap from './Components/MountainOverview/CenterMap'
-import RightDataPanel from './Components/MountainOverview/RightDataPanel'
-import './MountainOverview.css'
+import CenterMap from './Components/MountainData/CenterMap'
+import OperatingTimes from './Components/MountainData/OperatingTimes'
+import '../styles/MountainOverview.css'
 
 const MountainOverview = (props) => {
   return (
     <div className="mountain-overview">
-      <LeftDataPanel />
+      
+      <div className="operating-times">
+        <OperatingTimes
+          title="Open Times"
+        />
+      </div>
+
       <CenterMap />
-      <RightDataPanel />
+
+      <div className="operating-times">
+        <OperatingTimes
+          title="Close Times"
+        />
+      </div>
     </div>
   )
 }

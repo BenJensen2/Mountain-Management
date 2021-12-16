@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import MountainOverviewContextMenu from '..//ContextMenus/MountainOverviewContextMenu'
+import MountainOverviewContextMenu from '../ContextMenu/ContextMenu'
 import Bear from '../../../images/Bear.jpg';
 
 const MountainMap = () => {

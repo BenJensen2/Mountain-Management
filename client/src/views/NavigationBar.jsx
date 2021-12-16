@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './NavigationBar.css'
-import BearLogo from '../../images/Bear_Logo.png'
+import '../styles/NavigationBar.css'
+import BearLogo from '../images/Bear_Logo.png'
 
 const NavigationBar = () => {
 

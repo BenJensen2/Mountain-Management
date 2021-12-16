@@ -1,11 +1,9 @@
-.left-data-panel,
 .mountain-map,
-.right-data-panel {
+.operating-times {
   vertical-align: top;
 }
 
-.left-data-panel,
-.right-data-panel {
+.operating-times {
   display: inline-block;
   width: 10vw;
   height: 90vh;

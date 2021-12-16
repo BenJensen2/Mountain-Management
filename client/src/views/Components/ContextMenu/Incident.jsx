@@ -1,5 +1,5 @@
 import React from 'react';
-import IncidentForm from './Forms/IncidentForms/IncidentForm'
+import IncidentForm from '../Forms/IncidentForms/IncidentForm'
 import { Link } from 'react-router-dom'
 
 const Incident = () => {

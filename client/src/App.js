@@ -1,8 +1,8 @@
 import "./App.css";
 
-import NavigationBar from "./views/Architecture/NavigationBar";
-import MainContent from "./views//Architecture/MainContent";
-import MainFooter from "./views/Architecture/MainFooter";
+import NavigationBar from "./views/NavigationBar";
+import MainContent from "./views/MainContent";
+import MainFooter from "./views/MainFooter";
 
 function App() {
   return (

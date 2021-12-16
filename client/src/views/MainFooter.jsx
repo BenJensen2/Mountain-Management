@@ -1,5 +1,5 @@
 import React from 'react'
-import QuickLinks from '../Components/QuickLinks'
+import QuickLinks from './Components/QuickLinks'
 
 const MainFooter = () => {
   return (
