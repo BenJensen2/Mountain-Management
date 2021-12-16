@@ -1,5 +1,5 @@
 # BBSP
-Big Bear Ski Patrol Website and Database
+Big Bear Ski Patrol Mountain Management Web Application
 
 ## Basic Info
 - Current Status: Operational
@@ -10,7 +10,7 @@ Big Bear Ski Patrol Website and Database
 
 ## Git Repository
 - Local: Yes
-- Remote: https://github.com/BenJensen2/BBSP.git (Private)
+- Remote: https://github.com/BenJensen2/Mountain-Management.git (Private)
 
 ## Stack
 - Node
