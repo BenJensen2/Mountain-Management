@@ -1,9 +1,9 @@
 import React from 'react';
 
-const OpenTimes = (title) => {
+const OperatingTimes = (props) => {
   return (
     <div className="open-times">
-      <h4>Open Times</h4>
+      <h4>{props.title}</h4>
       <ul>
         East Side
           <li>
@@ -48,4 +48,4 @@ const OpenTimes = (title) => {
   )
 }
 
-export default OpenTimes;
+export default OperatingTimes;
