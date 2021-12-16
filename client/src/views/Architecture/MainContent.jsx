@@ -9,7 +9,7 @@ import MountainOverview from "../MountainOverview";
 // import CurrentMap from "./views/CurrentMap";
 // import Dispatch from "./views/Dispatch";
 // import Feature from "./views/Feature";
-import Incident from "../Need to Integrate/Incident";
+import Incident from "./Incident";
 // import LiftOps from "./views/LiftOps";
 // import Map2D from "./views/Map2D";
 // import Map3D from "./views/Map3D";
