@@ -1,7 +1,6 @@
 .center-map {
   width: 75vw;
   height: 90vh;
-  overflow: auto;
   position: relative;
   display: inline-block;
 }

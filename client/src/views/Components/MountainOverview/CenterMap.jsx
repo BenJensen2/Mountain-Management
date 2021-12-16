@@ -1,5 +1,5 @@
 import React from 'react';
-import '../MountainOverviewComponents/CenterMap.css'
+import '../MountainOverview/CenterMap.css'
 import MountainMap from '../MountainData/MountainMap'
 
 
