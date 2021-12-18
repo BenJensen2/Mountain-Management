@@ -7,10 +7,10 @@ const QuickLinks = () => {
     <div className="quick-links">
       <h4>Quick Links</h4>
       <div>
-        <Link to="/allLifts">| All Lifts </Link>
-        <Link to="/allMembers">| All Members </Link>
-        <Link to="/allFeatures">| All Features </Link>
-        <Link to="/allRuns">| All Runs </Link>
+        <Link to="/Lifts">| All Lifts </Link>
+        <Link to="/Members">| All Members </Link>
+        <Link to="/Features">| All Features </Link>
+        <Link to="/Runs">| All Runs </Link>
       </div>
       <div>
         <Link to="/map2D">| Map 2D </Link>

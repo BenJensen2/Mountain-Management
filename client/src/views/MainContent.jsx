@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch, Link } from "react-router-dom";
-import MountainOverview from "./MountainOverview";
-import MountainItem from './Components/MountainItem';
+import MountainOverview from "./Pages/MountainOverview";
+import MountainItems from './Components/MountainItems';
 
 // import AllFeatures from "./Components/MountainItems/AllFeatures";
 import AllLifts from "./Components/MountainItems/AllLifts";
@@ -24,16 +24,12 @@ const MainContent = (props) => {
   const [features, setFeatures] = useState("Hello");
   const [members, setMembers] = useState();
 
-  // To ensure all items are loaded before display
-  const [loaded, setLoaded] = useState(false);
-  const [mountainItemDisplay, setMountainItemDisplay] = useState(false);
-
   return (
     <div className="main-content">
       <Switch>
         {/* Will select the first matching route */}
-        <Route path="/allFeatures">
-          <MountainItem
+        <Route path="/Features">
+          <MountainItems
           item = "feature"
           mountainItems = {features}
           setMountainItems = {setFeatures}
