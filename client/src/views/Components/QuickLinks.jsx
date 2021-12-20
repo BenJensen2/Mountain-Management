@@ -7,12 +7,12 @@ const QuickLinks = () => {
     <div className="quick-links">
       <h4>Quick Links</h4>
       <div>
-        <Link to="/Lifts">| All Lifts </Link>
-        <Link to="/Members">| All Members </Link>
-        <Link to="/Features">| All Features </Link>
-        <Link to="/Runs">| All Runs </Link>
+        <Link to="/Lifts">| Lifts </Link>
+        <Link to="/Members">| Members </Link>
+        <Link to="/Features">| Features </Link>
+        <Link to="/Runs">| Runs |</Link>
       </div>
-      <div>
+      {/* <div>
         <Link to="/map2D">| Map 2D </Link>
         <Link to="/map3D">| Map 3D </Link>
         <Link to="/currentMap">| Current Map </Link>
@@ -20,7 +20,7 @@ const QuickLinks = () => {
         <Link to="/incident">| Incident </Link>
         <Link to="/feature">| Feature </Link>
         <Link to="/run">| Run </Link>
-      </div>
+      </div> */}
     </div>
   )
 }

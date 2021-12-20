@@ -3,7 +3,6 @@ import { Route, Switch, Link } from "react-router-dom";
 import MountainOverview from "./Pages/MountainOverview";
 import MountainItems from './Components/MountainItems';
 
-import AllMembers from "./Components/MountainItems/AllMembers";
 // import AllRuns from "./Components/MountainItems/AllRuns";
 // import CurrentMap from "./Components/MountainItems/CurrentMap";
 // import Dispatch from "./Components/MountainItems/Dispatch";
@@ -32,10 +31,15 @@ const MainContent = (props) => {
           <MountainItems item="lift" />
         </Route>
 
-        {/*
-        <Route path="/allRuns">
-          <AllRuns />
+        <Route path="/Members">
+          <MountainItems item="member" />
         </Route>
+
+        <Route path="/Runs">
+          <MountainItems item="run" />
+        </Route>
+
+        {/*
         <Route path="/currentMap">
           <CurrentMap />
         </Route>

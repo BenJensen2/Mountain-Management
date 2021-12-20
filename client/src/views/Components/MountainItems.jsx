@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import Features from './MountainItems/Features'
-import Lifts from './MountainItems/Lifts'
+import MountainItem from './MountainItem'
 
 const MountainItems = (
-  { 
+  {
     dataSelection,
     item,
     mountainItems,
-    setMountainItems 
+    setMountainItems
   }
 ) => {
 
@@ -78,9 +77,10 @@ const MountainItems = (
       })
   }
 
-  if (item == "feature") {
-    return (<Features
+  return (
+    <MountainItem
       // Data Selection
+      item={item}
       dataSelection={dataSelection}
       mountainItems={mountainItems}
       setMountainItems={setMountainItems}
@@ -88,16 +88,13 @@ const MountainItems = (
 
       // Database Operations
       getMountainItems={getMountainItems}       // Multiple
-      getMountainItem={getMountainItem} 
+      getMountainItem={getMountainItem}
       createMountainItem={createMountainItem}
       updateMountainItem={updateMountainItem}
       deleteMountainItem={deleteMountainItem}
 
-    />)
-  } else if (item == "lift"){
-    
-    
-  }
+    />
+  )
 
 }
 
