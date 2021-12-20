@@ -3,8 +3,6 @@ import { Route, Switch, Link } from "react-router-dom";
 import MountainOverview from "./Pages/MountainOverview";
 import MountainItems from './Components/MountainItems';
 
-// import AllFeatures from "./Components/MountainItems/AllFeatures";
-import AllLifts from "./Components/MountainItems/AllLifts";
 import AllMembers from "./Components/MountainItems/AllMembers";
 // import AllRuns from "./Components/MountainItems/AllRuns";
 // import CurrentMap from "./Components/MountainItems/CurrentMap";
@@ -19,30 +17,21 @@ import Incident from "./Components/ContextMenu/Incident";
 // import Run from "./Components/MountainItems/Run";
 
 const MainContent = (props) => {
-
-  // All Mountain Item State Initialization
-  const [features, setFeatures] = useState("Hello");
-  const [members, setMembers] = useState();
+  // Set data to use: Dummy Data(0), Database(1)
+  const dataSelection = 0;
 
   return (
     <div className="main-content">
       <Switch>
         {/* Will select the first matching route */}
         <Route path="/Features">
-          <MountainItems
-          item = "feature"
-          mountainItems = {features}
-          setMountainItems = {setFeatures}
-          />
+          <MountainItems item="feature" />
         </Route>
 
-        <Route path="/allLifts">
-          <AllLifts />
+        <Route path="/Lifts">
+          <MountainItems item="lift" />
         </Route>
 
-        <Route path="/allMembers">
-          <AllMembers />
-        </Route>
         {/*
         <Route path="/allRuns">
           <AllRuns />
