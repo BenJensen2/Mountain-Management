@@ -10,7 +10,7 @@ Big Bear Ski Patrol Mountain Management Web Application
 
 ## Git Repository
 - Local: Yes
-- Remote: https://github.com/BenJensen2/Mountain-Management.git (Private)
+- Remote: https://github.com/BenJensen2/Mountain-Management.git (Public)
 
 ## Stack
 - Node
