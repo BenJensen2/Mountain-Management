@@ -69,6 +69,7 @@
   height: 50vw;
   min-width: 740px;
   min-height: 555px;
+  max-height: 90vh;
   position: relative;
   display: inline-block;
 }
