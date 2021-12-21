@@ -1,5 +1,5 @@
 import React from 'react';
-import MountainMap from '../Components/MountainOverview/ResortMap'
+import CenterMap from '../Components/MountainOverview/CenterMap'
 import OperatingTimes from '../Components/MountainOverview/OperatingTimes'
 import '../../styles/MountainOverview.css'
 
@@ -13,7 +13,7 @@ const MountainOverview = (props) => {
         />
       </div>
 
-      <MountainMap />
+      <CenterMap />
 
       <div className="operating-times">
         <OperatingTimes
