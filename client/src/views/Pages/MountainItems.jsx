@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import MountainItem from './MountainItem'
+import MountainItem from '../Components/MountainItem'
 
 const MountainItems = (
   {

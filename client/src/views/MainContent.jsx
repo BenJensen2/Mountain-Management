@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch, Link } from "react-router-dom";
 import MountainOverview from "./Pages/MountainOverview";
-import MountainItems from './Components/MountainItems';
+import MountainItems from './Pages/MountainItems';
 
 // import AllRuns from "./Components/MountainItems/AllRuns";
 // import CurrentMap from "./Components/MountainItems/CurrentMap";
