@@ -7,7 +7,7 @@ import MountainItems from './Pages/MountainItems';
 // import CurrentMap from "./Components/MountainItems/CurrentMap";
 // import Dispatch from "./Components/MountainItems/Dispatch";
 // import Feature from "./Components/MountainItems/Feature";
-import Incident from "./Components/ContextMenu/Incident";
+import Incident from "./Components/MountainOverview/ContextMenu/Incident";
 // import LiftOps from "./Components/MountainItems/LiftOps";
 // import Map2D from "./Components/MountainItems/Map2D";
 // import Map3D from "./Components/MountainItems/Map3D";
