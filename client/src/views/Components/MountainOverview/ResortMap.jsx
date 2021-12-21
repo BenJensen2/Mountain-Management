@@ -8,7 +8,7 @@ const MountainMap = () => {
   const mapRef = useRef(null)
 
   return (
-    <div className="mountain-map" ref={containerRef}>
+    <div className="resort-map" ref={containerRef}>
       <MountainOverviewContextMenu parentRef={containerRef}
         mapRef={mapRef} />
       {/* <div className="overlay">
