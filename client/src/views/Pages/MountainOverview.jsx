@@ -6,20 +6,9 @@ import '../../styles/MountainOverview.css'
 const MountainOverview = (props) => {
   return (
     <div className="mountain-overview">
-      
-      <div className="operating-times">
-        <OperatingTimes
-          title="Open Times"
-        />
-      </div>
-
+      <OperatingTimes times="open"/>
       <ResortMap />
-
-      <div className="operating-times">
-        <OperatingTimes
-          title="Close Times"
-        />
-      </div>
+      <OperatingTimes times="close"/>
     </div>
   )
 }
