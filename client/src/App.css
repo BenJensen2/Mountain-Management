@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  box-sizing: border-box;
+  min-width: 1115px;
 }
 
 table {
@@ -14,3 +16,23 @@ a {
 li {
   list-style-type: none;
 }
+
+/* .App{
+  background-color: grey;
+}
+
+.quick-links{
+  background-color: red;
+}
+
+.main-content{
+  background-color: blue;
+}
+
+.mountain-overview{
+  background-color: purple;
+}
+
+.operating-times{
+  background-color: pink;
+} */

@@ -5,7 +5,6 @@ import '../../styles/QuickLinks.css'
 const QuickLinks = () => {
   return (
     <div className="quick-links">
-      <h4>Quick Links</h4>
       <div>
         <Link to="/Lifts">| Lifts </Link>
         <Link to="/Members">| Members </Link>
