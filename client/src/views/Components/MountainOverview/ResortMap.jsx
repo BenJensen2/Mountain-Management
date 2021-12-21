@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import MountainOverviewContextMenu from './ContextMenu/ContextMenu'
+import ContextMenu from './ContextMenu/ContextMenu'
 import Bear from '../../../images/Bear.jpg';
 
 const MountainMap = () => {
@@ -9,7 +9,7 @@ const MountainMap = () => {
 
   return (
     <div className="resort-map" ref={containerRef}>
-      <MountainOverviewContextMenu parentRef={containerRef}
+      <ContextMenu parentRef={containerRef}
         mapRef={mapRef} />
       {/* <div className="overlay">
           Mapping coordinates to trail map would not be porportional.... maybe it would
