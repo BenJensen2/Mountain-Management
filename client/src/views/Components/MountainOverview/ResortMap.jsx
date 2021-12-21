@@ -18,7 +18,7 @@ const MountainMap = () => {
             <div className="status"></div>
           </div>
         </div> */}
-      <img id='mountainTrailMap' src={Bear} alt="" ref={mapRef} />
+      <img id='resortTrailMap' src={Bear} alt="" ref={mapRef} />
     </div>
   )
 }
