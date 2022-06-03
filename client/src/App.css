@@ -1,7 +1,8 @@
 .App {
   text-align: center;
   box-sizing: border-box;
-  min-width: 1115px;
+  width: 100vw;
+  height: 100vh;
 }
 
 table {
@@ -17,7 +18,13 @@ li {
   list-style-type: none;
 }
 
-/* .App{
+
+.main-content{
+  height: 90%;
+  width: 100%;
+}
+
+.App{
   background-color: grey;
 }
 
@@ -35,4 +42,4 @@ li {
 
 .operating-times{
   background-color: pink;
-} */
+}
